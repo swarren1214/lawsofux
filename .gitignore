@@ -42,3 +42,5 @@ next-env.d.ts
 
 # generated from deck/ by scripts/build-deck.mjs
 /src/generated/
+test-results/
+playwright-report/

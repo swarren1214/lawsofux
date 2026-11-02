@@ -3,7 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import {
+  Check,
   ChevronLeft,
+  Copy,
+  ListChecks,
   ChevronRight,
   CircleHelp,
   ExternalLink,
@@ -93,7 +96,9 @@ export function PresenterConsole({
   sections,
   modules,
   initialIndex,
+  quizzes,
 }: {
+  quizzes: { module: string; open: boolean; count: number }[];
   slides: StageSlide[];
   notes: Record<string, Note>;
   sections: DeckSection[];
@@ -108,6 +113,7 @@ export function PresenterConsole({
   const [showHelp, setShowHelp] = React.useState(false);
   const [lastBeat, setLastBeat] = React.useState(0);
   const [now, setNow] = React.useState(() => Date.now());
+  const [copied, setCopied] = React.useState(false);
 
   const channelRef = React.useRef<BroadcastChannel | null>(null);
   const audienceRef = React.useRef<Window | null>(null);
@@ -213,6 +219,7 @@ export function PresenterConsole({
     slides.slice(from, to + 1).reduce((n, s) => n + (notes[s.id]?.minutes ?? 0), 0);
 
   const next = slides[index + 1];
+  const recapQuiz = slide.id.endsWith("-recap") ? quizzes.find((q) => q.module === slide.module) : undefined;
   const thumbStart = Math.max(0, Math.min(index - 3, slides.length - 7));
   const thumbs = slides.slice(thumbStart, thumbStart + 7);
   const where = slide.law ?? section?.label ?? "";
@@ -220,21 +227,19 @@ export function PresenterConsole({
   return (
     <div className="dark min-h-screen bg-background text-foreground">
       <header className="border-b">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 px-6 py-3">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 px-4 py-3 lg:px-6">
           <Button asChild variant="ghost" size="sm">
             <Link href="/">
               <X /> Exit
             </Link>
           </Button>
-          <div className="flex min-w-0 items-center gap-2.5 text-[15px]">
+          <div className="flex min-w-0 flex-1 basis-64 items-center gap-2.5 text-[15px]">
             <span className="size-2.5 shrink-0 rounded-full" style={{ background: `var(--${slide.module ?? "m1"})` }} />
             <span className="font-semibold">{mod ? `Module ${mod.number} · ${mod.title}` : "Introduction"}</span>
             {where && mod ? <span className="truncate text-muted-foreground">· {where}</span> : null}
           </div>
-          <div className="flex-1" />
-
-          <div className="flex items-center gap-1 rounded-full bg-card py-1 pl-4 pr-1">
-            <span className="text-xs font-semibold text-muted-foreground">Elapsed</span>
+          <div className="flex items-center gap-1 rounded-full bg-card py-1 pl-3 pr-1">
+            <span className="hidden text-xs font-semibold text-muted-foreground 2xl:inline">Elapsed</span>
             <span className="min-w-14 px-2 text-lg font-bold tabular-nums">{clock(seconds)}</span>
             <Button variant="secondary" size="sm" onClick={() => setRunning((r) => !r)}>
               {running ? <Pause /> : <Play />} {running ? "Pause" : "Resume"}
@@ -273,9 +278,10 @@ export function PresenterConsole({
             variant={showHelp ? "outline" : "secondary"}
             size="sm"
             aria-expanded={showHelp}
+            aria-label="How to share"
             onClick={() => setShowHelp((h) => !h)}
           >
-            <CircleHelp /> How to share
+            <CircleHelp /> <span className="hidden 2xl:inline">How to share</span>
           </Button>
         </div>
       </header>
@@ -424,6 +430,35 @@ export function PresenterConsole({
                 <span>
                   <strong>Keys:</strong> → or Space for next, ← for previous, B to blank. Clickers work too.
                 </span>
+              </div>
+            </section>
+          ) : null}
+
+          {recapQuiz && mod ? (
+            <section className="flex flex-col gap-3 rounded-2xl bg-card p-5 ring-2 ring-[#2997FF]">
+              <div className="flex items-center gap-2">
+                <ListChecks className="size-5 text-accent-foreground" />
+                <h2 className="flex-1 font-bold">Module {mod.number} quiz</h2>
+                <Badge variant="secondary">{recapQuiz.open ? "Open" : "Not open yet"}</Badge>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {recapQuiz.open
+                  ? `Share the link so people can take the ${recapQuiz.count}-question quiz now.`
+                  : "Set \"open\": true in content/quizzes/" + mod.key + ".json and deploy when the session ends."}
+              </p>
+              <div className="flex flex-wrap items-center gap-2">
+                <code className="rounded-lg bg-secondary px-2.5 py-1.5 text-sm">/quiz/{mod.key}</code>
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  onClick={() => {
+                    void navigator.clipboard?.writeText(`${window.location.origin}/quiz/${mod.key}`);
+                    setCopied(true);
+                    window.setTimeout(() => setCopied(false), 1800);
+                  }}
+                >
+                  {copied ? <Check /> : <Copy />} {copied ? "Copied" : "Copy link"}
+                </Button>
               </div>
             </section>
           ) : null}

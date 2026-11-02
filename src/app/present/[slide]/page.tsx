@@ -5,6 +5,7 @@ import { PresenterConsole } from "@/components/presenter/presenter-console";
 import { toStageSlide } from "@/components/slides/stage-slide";
 import { deck } from "@/lib/deck";
 import { isPresenter } from "@/lib/presenter-auth";
+import { quizSummaries } from "@/lib/quizzes";
 
 export const metadata: Metadata = { title: "Presenter · Laws of UX" };
 
@@ -25,6 +26,7 @@ export default async function PresentPage({ params }: { params: Promise<{ slide:
       sections={deck.sections.map(({ key, label, start, end }) => ({ key, label, start, end }))}
       modules={deck.modules}
       initialIndex={index}
+      quizzes={quizSummaries()}
     />
   );
 }

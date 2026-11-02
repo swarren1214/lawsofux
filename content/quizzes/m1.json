@@ -1,0 +1,97 @@
+{
+  "module": "m1",
+  "open": false,
+  "questions": [
+    {
+      "id": "m1-hick",
+      "law": "hick-law",
+      "prompt": "A settings screen grows from 2 options to 6. What does Hick’s Law predict?",
+      "options": [
+        { "id": "a", "text": "Nothing changes, as long as every option is clearly labeled" },
+        { "id": "b", "text": "Decision time goes up, and the first options added cost the most" },
+        { "id": "c", "text": "Decision time doubles with every option added" },
+        { "id": "d", "text": "People will always pick the first option" }
+      ],
+      "answer": "b",
+      "explanation": "Decision time grows with the logarithm of the number of choices. Going from two to four hurts more than going from ten to twelve."
+    },
+    {
+      "id": "m1-choice-overload",
+      "law": "co-law",
+      "prompt": "A checkout page offers fourteen shipping options. What’s the biggest risk?",
+      "options": [
+        { "id": "a", "text": "People read every option carefully and pick the best one" },
+        { "id": "b", "text": "The page takes longer to load" },
+        { "id": "c", "text": "People stall, second-guess, or leave without choosing" },
+        { "id": "d", "text": "People always choose the cheapest option" }
+      ],
+      "answer": "c",
+      "explanation": "Too many comparable options make choosing feel hard, so people delay, regret their pick, or choose nothing at all."
+    },
+    {
+      "id": "m1-cognitive-load",
+      "law": "cl-law",
+      "prompt": "Which of these is extraneous cognitive load: effort spent on the interface instead of the task?",
+      "options": [
+        { "id": "a", "text": "Hunting for the Save button because it moves on every screen" },
+        { "id": "b", "text": "Working out which insurance plan fits your budget" },
+        { "id": "c", "text": "Understanding the tax rule a form asks about" },
+        { "id": "d", "text": "Reading the order total before you pay" }
+      ],
+      "answer": "a",
+      "explanation": "The others are part of the task itself. A Save button that moves is pure interface cost, and that’s the load we can remove."
+    },
+    {
+      "id": "m1-working-memory",
+      "law": "wm-law",
+      "prompt": "Roughly how many chunks of information can people hold in working memory at once?",
+      "options": [
+        { "id": "a", "text": "One" },
+        { "id": "b", "text": "About four" },
+        { "id": "c", "text": "About twelve" },
+        { "id": "d", "text": "As many as they need, if they concentrate" }
+      ],
+      "answer": "b",
+      "explanation": "Current research puts it at about four chunks. Don’t make people carry details from one screen to the next."
+    },
+    {
+      "id": "m1-millers-law",
+      "law": "ml-law",
+      "prompt": "A teammate says, “Miller’s Law means menus can’t have more than seven items.” What’s the best response?",
+      "options": [
+        { "id": "a", "text": "Agreed, seven is a hard limit" },
+        { "id": "b", "text": "The real limit is five" },
+        { "id": "c", "text": "Miller’s Law only applies to phone numbers" },
+        { "id": "d", "text": "“Seven, plus or minus two” is about memory. People scan menus; they don’t memorize them" }
+      ],
+      "answer": "d",
+      "explanation": "Miller’s Law is a warning about memory, not a rule about menus. Use it to justify chunking, not arbitrary item limits."
+    },
+    {
+      "id": "m1-chunking",
+      "law": "ch-law",
+      "prompt": "Why show a card number as 4242 4242 4242 4242 instead of one unbroken string?",
+      "options": [
+        { "id": "a", "text": "Small groups are easier to scan, check and remember" },
+        { "id": "b", "text": "It takes up less space" },
+        { "id": "c", "text": "The number won’t work without the spaces" },
+        { "id": "d", "text": "It makes the number harder to copy" }
+      ],
+      "answer": "a",
+      "explanation": "Grouping turns sixteen digits into four chunks, so people can check what they typed."
+    },
+    {
+      "id": "m1-selective-attention",
+      "law": "sa-law",
+      "prompt": "People keep missing an important notice that’s styled like a promotional banner. What’s happening?",
+      "options": [
+        { "id": "a", "text": "The notice is too short" },
+        { "id": "b", "text": "People don’t care about notices" },
+        { "id": "c", "text": "People tune out anything that looks like an ad (banner blindness)" },
+        { "id": "d", "text": "The banner needs an animation" }
+      ],
+      "answer": "c",
+      "explanation": "People focus on what fits their goal and filter out things that look like ads. Important information shouldn’t look like a promotion."
+    }
+  ]
+}
