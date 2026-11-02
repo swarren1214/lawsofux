@@ -1,0 +1,33 @@
+<section id="wm-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.lab{position:absolute;left:48px;top:44px;font-size:24px;color:#6E6E73;font-weight:500}
+.big{position:absolute;left:48px;top:76px;font-size:44px;font-weight:800;letter-spacing:-1px}
+.slot{position:absolute;left:48px;right:48px;height:88px;border-radius:22px;border:2px dashed #D2D2D7}
+.it{position:absolute;left:48px;right:48px;top:0;height:88px;border-radius:22px;display:flex;align-items:center;padding:0 28px;font-size:28px;font-weight:700;color:#FFFFFF;box-shadow:0 10px 24px rgba(0,0,0,.12);transition:transform .7s cubic-bezier(.3,.9,.3,1),opacity .6s}
+.fl{position:absolute;left:48px;top:700px;font-size:24px;color:#AEAEB2;font-weight:500}
+</style>
+<div class="lab">Working memory</div><div class="big">About four slots</div>
+<div class="slot" style="top:290px"></div><div class="slot" style="top:392px"></div><div class="slot" style="top:494px"></div><div class="slot" style="top:596px"></div>
+<div class="fl">Forgotten ↓</div>
+<script>
+var L=['Gate code 4471','Dog’s name: Max','Unit 4B','Call back at 3','Serial A-2290','Bring the ladder'];
+var C=['linear-gradient(135deg,#2997FF,#5E5CE6)','linear-gradient(135deg,#30D158,#0FB5AE)','linear-gradient(135deg,#FF9F0A,#FF375F)','linear-gradient(135deg,#BF5AF2,#5E5CE6)','linear-gradient(135deg,#0FB5AE,#2997FF)','linear-gradient(135deg,#FF375F,#BF5AF2)'];
+var items=[],c=0;
+function pos(d,y,o){d.style.transform='translateY('+y+'px)';d.style.opacity=o}
+function add(){var d=document.createElement('div');d.className='it';d.textContent=L[c%L.length];d.style.background=C[c%C.length];c++;pos(d,170,0);document.body.appendChild(d);
+setTimeout(function(){pos(d,170,1)},40);
+setTimeout(function(){items.unshift(d);items.forEach(function(e,k){if(4>k){pos(e,290+k*102,1)}else{pos(e,736,.35);e.style.textDecoration='line-through';(function(e){setTimeout(function(){e.style.opacity=0},900);setTimeout(function(){if(e.parentNode){e.parentNode.removeChild(e)}},1700)})(e)}});items=items.slice(0,4)},800);
+setTimeout(add,1900)}
+add();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#1D1D1F">Working Memory</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:470px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">The brain’s scratchpad holds only a few things at once, and only for seconds unless we keep repeating them.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:730px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Baddeley &amp; Hitch (1974) modeled working memory. Cowan (2001) puts its capacity at about four chunks.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/working-memory · Baddeley &amp; Hitch, 1974; Cowan, 2001</p>
+<aside>[~3 min] Working memory is the brain’s scratchpad. It holds a few things at once, and only for a few seconds unless you keep repeating them. The model comes from Alan Baddeley and Graham Hitch in 1974, and more recent work by Nelson Cowan puts the capacity at about four chunks. [Point to the animation] This is a technician’s morning. A gate code. A dog’s name. A unit number. A callback time. Watch each one push in at the top. And when the fifth one arrives, the oldest one falls out. [Pause] Nobody decided to forget the gate code. The slots were just full. To be fair to the research, four neat slots is a simplification, not a precise count. But the lesson holds, and it’s a big one: “they should just remember it” is never a valid design assumption. Anything a user needs on screen B that they saw on screen A is at risk of falling out. [Ask the room: “Where do we ask people to remember something from one screen to the next?”] [Let two or three people answer.] Let’s look at a couple of products that do the remembering for you.</aside>
+</section>

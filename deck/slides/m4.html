@@ -1,0 +1,29 @@
+<section id="m4" data-transition="fade" style="background:linear-gradient(135deg, #9A4B00 0%, #A8321E 55%, #941D42 100%);color:#FDFDFE;font-family:'Inter', Arial, sans-serif">
+<x-embed style="position:absolute;left:1060px;top:180px;width:720px;height:720px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden}
+.c{position:absolute;border-radius:28px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);transition:opacity 1s,transform 1s}
+.c.f{opacity:.15;transform:scale(.92)}
+.c.on{background:rgba(255,214,10,.9);border-color:#FFD60A;opacity:1;transform:scale(1.04)}
+</style>
+<script>
+var C=[],i;
+for(i=0;9>i;i++){var d=document.createElement('div');d.className='c';d.style.left=(70+(i%3)*200)+'px';d.style.top=(70+Math.floor(i/3)*200)+'px';d.style.width='180px';d.style.height='180px';document.body.appendChild(d);C.push(d)}
+var k=0;
+function go(){C.forEach(function(c,j){c.className=(j==0||j==8)?'c on':(j==k?'c':'c f')});k=1+(k%7);setTimeout(go,900)}
+go();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:200px;width:880px;font-size:32px;font-weight:600;color:#FDFDFE">Module 4 of 5</p>
+<h1 data-build-in="rise 2" style="position:absolute;left:128px;top:256px;width:900px;font-size:140px;font-weight:800;line-height:1.02;letter-spacing:-5px;color:#FDFDFE">How people remember</h1>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:590px;width:840px;font-size:44px;font-weight:500;line-height:1.3;letter-spacing:-0.5px;color:#FDFDFE">Seven laws about expectations, memory and the shortcuts our minds take.</p>
+<div data-build-in="rise 4" style="position:absolute;left:128px;top:760px;width:900px;display:flex;flex-direction:row;flex-wrap:wrap;gap:14px">
+<p style="font-size:24px;font-weight:700;background:#1D1D1F;color:#FDFDFE;padding:12px 24px;border-radius:999px">Jakob’s Law</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Mental Model</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Serial Position</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Peak-End Rule</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Zeigarnik Effect</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Goal-Gradient</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Cognitive Bias</p>
+</div>
+<aside>[~1 min] Welcome back. Last time we talked about how people act: big targets, fast responses, protecting flow. Today is Module 4, how people remember. And this one’s a little different. It’s about what people bring with them and what they take away. [Pause] They show up with expectations from every other product they’ve ever used, and a mental model of how ours probably works. And when they leave, they take a memory with them, and that memory is shaped by order, by the high points, by the ending, and by what’s still unfinished. All along the way, cognitive biases bend their judgment in pretty predictable ways. [Point to the animation] Look at the grid on the right. There are nine tiles, and watch which ones stay lit. The first and the last. The middle ones fade. Keep that in the back of your mind, because we’ll come back to it in a few laws. We’ve got seven to get through. Let’s start with the one that explains why your users keep looking for the cart in the top-right corner: Jakob’s Law.</aside>
+</section>

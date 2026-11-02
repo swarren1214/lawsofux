@@ -1,0 +1,56 @@
+<section id="pa-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.scr{position:absolute;left:196px;top:60px;width:360px;height:580px;border-radius:46px;background:#1D1D1F;padding:12px}
+.in{width:100%;height:100%;background:#F5F5F7;border-radius:36px;padding:24px 20px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.t{font-size:28px;font-weight:800;margin-bottom:6px}
+.r{background:#FDFDFE;border-radius:16px;padding:16px 18px;font-size:24px;font-weight:600;transition:background .3s,color .3s,transform .5s}
+.r.done{background:#E3F9E8;color:#1E7A35}
+.dm{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.4);transition:opacity .3s}
+.m{position:absolute;left:18px;right:18px;top:110px;background:#FDFDFE;border-radius:28px;padding:24px;box-shadow:0 20px 40px rgba(0,0,0,.3);display:flex;flex-direction:column;gap:14px;transition:opacity .3s,transform .3s}
+.off{opacity:0;transform:scale(.92)}
+.m b{font-size:28px}.m small{font-size:24px;color:#6E6E73}
+.bar{height:12px;border-radius:6px;background:#E8E8ED}
+.nx{font-size:24px;font-weight:700;text-align:center;color:#FFFFFF;background:#0071E3;padding:14px;border-radius:14px}
+.sk{font-size:24px;text-align:center;color:#6E6E73;padding:6px}
+.tip{position:absolute;left:20px;right:20px;background:#0071E3;color:#FFFFFF;font-size:24px;font-weight:600;padding:14px 16px;border-radius:16px;box-shadow:0 10px 24px rgba(0,113,227,.35);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s}
+.tip.on{opacity:1;transform:none}
+.c{position:absolute;width:34px;height:34px;border-radius:50%;background:rgba(29,29,31,.85);border:4px solid #FDFDFE;box-shadow:0 4px 12px rgba(0,0,0,.35);transform:translate(-50%,-50%);transition:left .5s cubic-bezier(.4,0,.2,1),top .5s cubic-bezier(.4,0,.2,1)}
+.st{position:absolute;left:48px;right:48px;top:676px;font-size:32px;font-weight:800;text-align:center;letter-spacing:-.5px;transition:opacity .25s}
+</style>
+<div class="scr"><div class="in" id="in">
+<div class="t">Job steps</div>
+<div class="r">Before photo</div><div class="r" id="r2">Inspect</div><div class="r">Treat</div><div class="r">Notes</div>
+<div class="tip" id="tip">Tip: swipe right to finish a step</div>
+<div class="dm" id="dm"></div>
+<div class="m" id="m"><b>Welcome tour</b><small>Step 1 of 5</small><div class="bar" style="width:90%"></div><div class="bar" style="width:70%"></div><div class="bar" style="width:80%"></div><div class="nx">Next</div><div class="sk" id="sk">Skip</div></div>
+</div></div>
+<div class="c" id="c"></div>
+<div class="st" id="st"></div>
+<script>
+function $(i){return document.getElementById(i)}
+var c=$('c'),r2=$('r2'),tip=$('tip');
+function at(e){var r=e.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}
+function mv(x,y){c.style.left=x+'px';c.style.top=y+'px'}
+function st(t){var s=$('st');s.style.opacity=0;setTimeout(function(){s.textContent=t;s.style.opacity=1},250)}
+function run(){c.style.transition='none';mv(640,760);void c.offsetWidth;c.style.transition='';$('m').className='m';$('dm').className='dm';r2.className='r';r2.style.transform='none';tip.className='tip';st('A five-step tour…');
+tip.style.top=(r2.offsetTop+r2.offsetHeight+12)+'px';
+setTimeout(function(){var p=at($('sk'));mv(p[0],p[1])},700);
+setTimeout(function(){$('m').className='m off';$('dm').className='dm off';st('…skipped in under a second.')},1400);
+setTimeout(function(){var p=at(r2);mv(p[0]-60,p[1])},2700);
+setTimeout(function(){tip.className='tip on';st('Help shows up at the moment of need.')},3300);
+setTimeout(function(){var p=at(r2);mv(p[0]+90,p[1]);r2.style.transform='translateX(16px)'},4400);
+setTimeout(function(){r2.className='r done';r2.style.transform='none';tip.className='tip'},5000);
+setTimeout(run,7600)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Paradox of the Active User</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:530px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">People never read the manual. They start using the software right away.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:760px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Carroll &amp; Rosson (1987): users skip instructions to get things done, even when reading would save time.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/paradox-of-the-active-user · Carroll &amp; Rosson, 1987</p>
+<aside>[~3 min] Paradox of the Active User. Be honest. Raise your hand if you’ve ever read the manual before using a new app. [Wait for hands] Yeah, about what I expected. [Point to the animation] That animation is every onboarding tour ever built. Five carefully written steps, skipped in under a second. And this isn’t laziness. John Carroll and Mary Beth Rosson studied it back in 1987, and they called it a paradox for a reason. People would often be faster overall if they read the instructions first. But they’re there to get a job done, so they dive straight in. [Pause] So what do we do about that? The answer isn’t to force people through the tour. Making the skip button smaller doesn’t make anyone learn more. The answer is to put the help where people already are: a hint at the exact moment they need it, an empty state that teaches them the first step, and an interface you can figure out just by trying things. [Ask the room: “Who here has built an onboarding tour that you suspect nobody watches?”] [Let a few people own up.] No judgment, we’ve all done it. Let’s look at two places that teach by doing instead.</aside>
+</section>

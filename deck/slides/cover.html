@@ -1,0 +1,18 @@
+<section id="cover" data-transition="fade" style="background:#0B0B0F;color:#F5F5F7;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:860px;top:80px;width:1000px;height:920px;background:radial-gradient(circle at 55% 50%, rgba(94,92,230,0.32) 0%, rgba(41,151,255,0.12) 40%, rgba(11,11,15,0) 70%)"></div>
+<x-embed style="position:absolute;left:1060px;top:200px;width:680px;height:680px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden}
+.g{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;grid-template-columns:repeat(6,80px);gap:20px}
+.t{width:80px;height:80px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);animation:w 4.2s ease-in-out infinite}
+@keyframes w{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(.84);opacity:1;background:rgba(255,255,255,.14)}}
+.o{background:linear-gradient(135deg,#FF9F0A,#FF375F);border:none;border-radius:40px;opacity:1;animation:p 2.2s ease-in-out infinite;box-shadow:0 0 50px rgba(255,110,60,.65)}
+@keyframes p{0%,100%{transform:scale(1)}50%{transform:scale(1.14);box-shadow:0 0 80px rgba(255,110,60,.9)}}
+</style><div class="g" id="g"></div>
+<script>var g=document.getElementById('g');for(var i=0;30>i;i++){var d=document.createElement('div');var r=Math.floor(i/6),c=i%6;if(i==16){d.className='t o'}else{d.className='t';d.style.animationDelay=((r+c)*0.2)+'s'}g.appendChild(d)}</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:330px;width:860px;font-size:32px;font-weight:600;color:#A1A1A6">A training for Product, Engineering &amp; QA</p>
+<h1 data-build-in="rise 2" style="position:absolute;left:128px;top:390px;width:900px;font-size:140px;font-weight:800;line-height:1.05;letter-spacing:-5px;background:linear-gradient(90deg, #2997FF 0%, #A974FF 50%, #FF9F0A 100%);background-clip:text;-webkit-text-fill-color:transparent">Laws of UX</h1>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:590px;width:800px;font-size:44px;font-weight:500;line-height:1.3;letter-spacing:-0.5px;color:#F5F5F7">Thirty pieces of psychology that decide whether people can use what we ship.</p>
+<p data-build-in="fade 4" style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6E6E73">Based on lawsofux.com by Jon Yablonski · Session 0: Overview</p>
+<aside>[~3 min] Hi everyone, and thanks for being here. Over the next few sessions we’re going to work through the Laws of UX. That’s a collection of thirty principles from psychology and design research, pulled together by Jon Yablonski at lawsofux.com. Before I say anything else, look at the grid on the right for a second. [Pause] [Ask the room: “Which tile did your eye go to first?”] [Let a few people answer.] Almost everyone says the glowing orange one. That’s the Von Restorff Effect, one of the laws we’ll cover, and you just experienced it without me teaching it to you. That’s really the point of this whole training. These laws already shape how people use our product, whether we design for them or not. So here’s how this will run. Today is a short overview. After that, each module is its own session, and every law follows the same pattern so you always know where we are. This isn’t a design class. It’s for Product, Engineering and QA, so all three teams end up with the same words for “this feels wrong.” Let’s start with why that matters.</aside>
+</section>

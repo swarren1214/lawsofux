@@ -1,0 +1,26 @@
+<section id="pr-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+svg{position:absolute;left:48px;top:120px}
+g{transition:transform 1.1s cubic-bezier(.5,0,.2,1)}
+circle,rect{transition:fill .8s}
+.big{position:absolute;left:48px;right:48px;top:640px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .3s}
+.sub{position:absolute;left:48px;right:48px;top:704px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center;transition:opacity .3s}
+</style>
+<svg width="656" height="480" viewBox="0 0 656 480"><g id="a"><circle id="ca" r="130" fill="#5E5CE6"/></g><g id="b"><rect id="rb" x="-115" y="-115" width="230" height="230" rx="28" fill="#5E5CE6"/></g></svg>
+<div class="big" id="t">What do you see?</div><div class="sub" id="s">One shape, or two?</div>
+<script>
+var a=document.getElementById('a'),b=document.getElementById('b'),ca=document.getElementById('ca'),rb=document.getElementById('rb'),t=document.getElementById('t'),s=document.getElementById('s'),on=false;
+function set(sp){a.style.transform=sp?'translate(170px,240px)':'translate(262px,240px)';b.style.transform=sp?'translate(490px,240px)':'translate(398px,240px)';ca.setAttribute('fill',sp?'#2997FF':'#5E5CE6');rb.setAttribute('fill',sp?'#BF5AF2':'#5E5CE6')}
+function go(){on=!on;set(on);t.style.opacity=0;s.style.opacity=0;setTimeout(function(){t.textContent=on?'A circle and a square.':'What do you see?';s.textContent=on?'The simplest reading wins, every time.':'One shape, or two?';t.style.opacity=1;s.style.opacity=1},300);setTimeout(go,on?3200:3000)}
+set(false);setTimeout(go,2600);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Law of Prägnanz</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">People read complex or ambiguous images in the simplest form they can.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Koffka (1935) called it the principle of good form: the mind settles on the simplest, most stable reading.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/law-of-prägnanz · Koffka, 1935</p>
+<aside>[~3 min] The Law of Prägnanz. Prägnanz is German for something like “conciseness” or “good form.” The idea: when people see something complex or ambiguous, they read it in the simplest form they can. [Point to the animation] Watch the purple shape while it’s merged into one blob. Technically, it’s a lumpy eleven-sided figure. But nobody ever describes it that way. Everyone says “a circle and a square overlapping,” and they say it before the shapes even separate. Your brain goes for the simplest explanation that fits. Kurt Koffka called this the principle of good form back in 1935. [Pause] The design lesson is that simple shapes get processed faster and remembered better. Icons, logos and layouts that boil down to a few basic forms read at a glance. Ones that don’t make people work. [Ask the room: “What’s an icon in our product that you’ve had to stare at to figure out?”] [Let two or three people answer.] Let’s look at a couple of places where this was done really well.</aside>
+</section>

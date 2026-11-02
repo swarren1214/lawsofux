@@ -1,0 +1,38 @@
+<section id="dt-kestrel" data-transition="push" style="background:#0B0B0F;color:#F5F5F7;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:900px;top:100px;width:980px;height:900px;background:radial-gradient(circle at 50% 50%, rgba(48,209,88,0.18) 0%, rgba(15,181,174,0.08) 40%, rgba(11,11,15,0) 70%)"></div>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:760px;font-size:32px;font-weight:600;color:#2997FF">Beat 3 · At Kestrel (fictional)</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:780px;font-size:72px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F5F5F7">The photo upload</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:360px;width:760px;font-size:32px;line-height:1.4;color:#A1A1A6">On weak signal, tapping “Add photo” froze the whole screen until the upload finished.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:540px;width:760px;font-size:32px;line-height:1.4;color:#A1A1A6">Techs assumed it hadn’t worked, tapped again, and sent duplicates of every photo.</p>
+<div data-build-in="rise 5" style="position:absolute;left:128px;top:740px;width:760px;background:#1C1C1E;padding:32px 36px;border-radius:32px">
+<p style="font-size:32px;line-height:1.4;color:#F5F5F7"><b>The fix:</b> show the photo instantly, upload in the background, keep the screen usable.</p>
+</div>
+<div data-build-in="rise 6" style="position:absolute;left:960px;top:128px;width:400px;height:824px;display:flex;flex-direction:column;gap:16px;background:#1C1C1E;padding:28px;border-radius:44px">
+<p style="font-size:24px;font-weight:700;color:#8E8E93">Before</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;justify-content:center;background:#8E8E93;color:#1D1D1F;padding:24px;border-radius:32px">
+<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:10px;opacity:0.5"><div style="height:110px;background:#C9D6E3;border-radius:14px"></div><div style="height:110px;background:#C9D6E3;border-radius:14px"></div></div>
+<div style="display:flex;flex-direction:column;gap:14px;align-items:center;background:#FDFDFE;padding:32px 20px;border-radius:24px;box-shadow:0 20px 40px rgba(0,0,0,0.3)">
+<svg aria-label="Loading spinner" width="72" height="72" viewBox="0 0 72 72" style="width:72px;height:72px" xmlns="http://www.w3.org/2000/svg"><circle cx="36" cy="36" r="28" fill="none" stroke="#E8E8ED" stroke-width="8"/><path d="M36 8 A28 28 0 0 1 64 36" fill="none" stroke="#0071E3" stroke-width="8" stroke-linecap="round"/></svg>
+<p style="font-size:24px;font-weight:700">Uploading…</p>
+<p style="font-size:24px;color:#6E6E73">Please wait</p>
+</div>
+<p style="font-size:24px;font-weight:700;text-align:center;color:#6E6E73;background:#AEAEB2;padding:16px;border-radius:18px;opacity:0.6">Next step</p>
+</div>
+</div>
+<div data-build-in="rise 7" style="position:absolute;left:1392px;top:128px;width:400px;height:824px;display:flex;flex-direction:column;gap:16px;background:#1C1C1E;padding:28px;border-radius:44px;box-shadow:0 0 0 3px #2997FF, 0 30px 80px rgba(0,0,0,0.5)">
+<p style="font-size:24px;font-weight:700;color:#2997FF">After</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#F5F5F7;color:#1D1D1F;padding:24px;border-radius:32px">
+<p style="font-size:24px;font-weight:700">Photos</p>
+<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:10px">
+<div style="height:120px;background:linear-gradient(135deg, #9FC5F8, #5E8DE6);border-radius:14px"></div>
+<div style="height:120px;background:linear-gradient(135deg, #A8E6B8, #30D158);border-radius:14px"></div>
+<div style="height:120px;background:linear-gradient(135deg, #FFD59E, #FF9F0A);border-radius:14px"></div>
+<div style="height:120px;display:flex;flex-direction:column;justify-content:end;padding:8px;background:linear-gradient(135deg, #D7C4F5, #BF5AF2);border-radius:14px"><p style="font-size:24px;font-weight:600;text-align:center;color:#1D1D1F;background:#FDFDFE;padding:2px 6px;border-radius:10px">Syncing</p></div>
+</div>
+<p style="font-size:24px;color:#6E6E73">Uploads finish in the background.</p>
+<div style="flex:1"></div>
+<p style="font-size:24px;font-weight:700;text-align:center;color:#FDFDFE;background:linear-gradient(135deg, #2997FF, #5E5CE6);padding:16px;border-radius:18px">Next step</p>
+</div>
+</div>
+<aside>[~3 min] So picture a Kestrel tech finishing up in a basement, or out at the edge of town, with one bar of signal. They tap “Add photo.” [Point to the Before card] And the whole screen freezes. “Uploading, please wait.” No progress, no sign anything’s happening. So what do they do? They assume it didn’t work and tap again. And again. Now the office has three copies of every photo. Kestrel is fictional, but this is one of the most common latency bugs in field apps. And here’s the thing: the before screen is technically correct. It’s waiting for the server to confirm. It’s just that on weak signal, that takes forever. [Pause] [Point to the After card] Here’s the Doherty Threshold applied. The photo shows up instantly. The upload keeps going in the background, with a little “Syncing” label, and the tech can move on to the next step. If an upload eventually fails, the app retries and flags just that one photo. [Ask the room: “Which of our actions block the screen while we wait on the network?”] [Let two or three people answer.] Okay, let’s turn that into homework for each team.</aside>
+</section>

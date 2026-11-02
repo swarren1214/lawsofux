@@ -1,0 +1,45 @@
+<section id="fl-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.lab{position:absolute;left:48px;top:48px;font-size:24px;color:#6E6E73;font-weight:500}
+.bar{position:absolute;left:48px;right:48px;top:90px;height:24px;border-radius:12px;background:#E8E8ED;overflow:hidden}
+.f{height:100%;width:0;border-radius:12px;background:linear-gradient(90deg,#30D158,#0FB5AE)}
+.tg{position:absolute;background:linear-gradient(135deg,#30D158,#0FB5AE);opacity:.25;transition:opacity .3s,box-shadow .3s}
+.tg.on{opacity:1}
+.tg.hit{box-shadow:0 0 0 16px rgba(48,209,88,.28)}
+.st{position:absolute;width:24px;height:24px;border-radius:50%;border:3px dashed #AEAEB2;left:98px;top:548px}
+.c{position:absolute;width:30px;height:30px;border-radius:50%;background:#1D1D1F;border:4px solid #FDFDFE;box-shadow:0 4px 12px rgba(0,0,0,.35);transform:translate(-50%,-50%)}
+.big{position:absolute;left:48px;right:48px;top:690px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .3s}
+</style>
+<div class="lab">Time to hit the target</div><div class="bar"><div class="f" id="f"></div></div>
+<div class="tg" id="A" style="left:624px;top:170px;width:32px;height:32px;border-radius:16px"></div>
+<div class="tg" id="B" style="left:220px;top:360px;width:240px;height:150px;border-radius:32px"></div>
+<div class="st"></div>
+<div class="big" id="t"></div>
+<div class="c" id="c"></div>
+<script>
+var c=document.getElementById('c'),f=document.getElementById('f'),A=document.getElementById('A'),B=document.getElementById('B'),t=document.getElementById('t');
+function mv(x,y,ms){c.style.transition='left '+ms+'ms cubic-bezier(.3,.7,.4,1), top '+ms+'ms cubic-bezier(.3,.7,.4,1)';c.style.left=x+'px';c.style.top=y+'px'}
+function bar(w,ms){f.style.transition='width '+ms+'ms linear';f.style.width=w+'%'}
+function reset(s){c.style.transition='none';c.style.left='110px';c.style.top='560px';f.style.transition='none';f.style.width='0';t.style.opacity=0;setTimeout(function(){t.textContent=s;t.style.opacity=1},250)}
+function pa(){reset('Small and far');A.className='tg on';B.className='tg';
+setTimeout(function(){bar(90,2000);mv(560,240,900)},600);
+setTimeout(function(){mv(668,172,420)},1500);
+setTimeout(function(){mv(640,186,460)},1950);
+setTimeout(function(){A.className='tg on hit'},2500);
+setTimeout(pb,4200)}
+function pb(){reset('Big and close');B.className='tg on';A.className='tg';
+setTimeout(function(){bar(26,560);mv(340,435,540)},600);
+setTimeout(function(){B.className='tg on hit'},1180);
+setTimeout(pa,3600)}
+pa();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Fitts’s Law</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">The time it takes to hit a target depends on how far away it is and how big it is.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Fitts (1954): movement time rises with distance and falls with target size, predictably enough to model.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/fittss-law · Fitts, 1954</p>
+<aside>[~3 min] Fitts’s Law. The time it takes to hit a target depends on two things: how far away it is and how big it is. [Point to the animation] Watch the two runs. Going for the small, far target, the pointer moves fast, overshoots, and then makes a bunch of slow little corrections to land. The big, close target? One quick, confident move. Done. The timing in the animation is illustrative, but the shape of it is exactly what Paul Fitts described in 1954. It’s one of the most reliable findings in all of human-computer interaction, reliable enough that you can model it. [Pause] So you get two levers. Make important targets bigger, and put them closer to where the hand or cursor already is. And on phones, remember a thumb is much less precise than a mouse pointer. [Ask the room: “What’s the most annoying tiny button you’ve fought with this week, in any app?”] [Let two or three people answer.] Everyone has one. Let’s look at a couple of places the world gets this right.</aside>
+</section>

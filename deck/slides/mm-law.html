@@ -1,0 +1,57 @@
+<section id="mm-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.dv{position:absolute;border:6px solid #1D1D1F;background:#F5F5F7;display:flex;align-items:center;justify-content:center}
+.doc{width:62px;height:78px;border-radius:10px;background:#FDFDFE;border:3px solid #0071E3;display:flex;flex-direction:column;gap:7px;padding:12px 10px;transition:opacity .4s,transform .4s}
+.doc i{display:block;height:6px;border-radius:3px;background:#AEAEB2}
+.doc.gone{opacity:0;transform:scale(.6)}
+.bd{position:absolute;width:44px;height:44px;border-radius:50%;color:#FFFFFF;font-size:28px;font-weight:800;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,.9,.3,1.6)}
+.bd.on{transform:scale(1)}
+.dl{position:absolute;left:176px;top:470px;width:400px;background:#FDFDFE;border-radius:24px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:14px;opacity:0;transform:scale(.9);transition:opacity .3s,transform .3s}
+.dl.on{opacity:1;transform:none}
+.dl b{font-size:24px}
+.btns{display:flex;gap:10px}.btns div{flex:1;font-size:24px;font-weight:700;text-align:center;padding:12px;border-radius:14px}
+.c{position:absolute;width:32px;height:32px;border-radius:50%;background:rgba(29,29,31,.85);border:4px solid #FDFDFE;box-shadow:0 4px 12px rgba(0,0,0,.35);transform:translate(-50%,-50%);transition:left .55s cubic-bezier(.4,0,.2,1),top .55s cubic-bezier(.4,0,.2,1)}
+.st{position:absolute;left:48px;right:48px;top:52px;font-size:32px;font-weight:800;text-align:center;transition:opacity .25s}
+.cap{position:absolute;left:60px;right:60px;top:660px;font-size:28px;font-weight:600;line-height:1.35;text-align:center;color:#6E6E73;transition:opacity .25s}
+</style>
+<div class="st" id="st"></div>
+<div class="dv" style="left:64px;top:170px;width:140px;height:250px;border-radius:26px"><div class="doc" id="d0"><i></i><i></i><i style="width:70%"></i></div></div>
+<div class="dv" style="left:250px;top:180px;width:260px;height:170px;border-radius:14px"><div class="doc" id="d1"><i></i><i></i><i style="width:70%"></i></div></div>
+<div style="position:absolute;left:226px;top:350px;width:308px;height:18px;border-radius:0 0 12px 12px;background:#1D1D1F"></div>
+<div class="dv" style="left:552px;top:170px;width:150px;height:230px;border-radius:20px"><div class="doc" id="d2"><i></i><i></i><i style="width:70%"></i></div></div>
+<div class="bd" id="b0" style="left:176px;top:152px"></div><div class="bd" id="b1" style="left:486px;top:160px"></div><div class="bd" id="b2" style="left:674px;top:152px"></div>
+<div class="dl" id="dl"><b>Delete from all your devices?</b><div class="btns"><div style="background:#E8E8ED">Cancel</div><div id="del" style="background:#D70015;color:#FFFFFF">Delete</div></div></div>
+<div class="c" id="c"></div>
+<div class="cap" id="cap"></div>
+<script>
+function $(i){return document.getElementById(i)}
+var c=$('c');
+function at(e){var r=e.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}
+function mv(e){var p=at(e);c.style.left=p[0]+'px';c.style.top=p[1]+'px'}
+function tx(i,t){var e=$(i);e.style.opacity=0;setTimeout(function(){e.textContent=t;e.style.opacity=1},250)}
+function bd(k,ok){var b=$('b'+k);b.style.background=ok?'#30D158':'#FF3B30';b.textContent=ok?'✓':'!';b.className='bd on'}
+function reset(){c.style.transition='none';c.style.left='376px';c.style.top='760px';void c.offsetWidth;c.style.transition='';[0,1,2].forEach(function(k){$('d'+k).className='doc';$('b'+k).className='bd'});$('dl').className='dl'}
+function A(){reset();tx('st','Tap Delete on the phone…');tx('cap','');
+setTimeout(function(){mv($('d0'))},500);
+setTimeout(function(){[0,1,2].forEach(function(k){$('d'+k).className='doc gone'})},1300);
+setTimeout(function(){bd(1,false);bd(2,false);tx('cap','Expected: gone from this phone. Actually: gone everywhere.')},1800);
+setTimeout(B,5200)}
+function B(){reset();tx('st','Same tap, honest model');tx('cap','');
+setTimeout(function(){mv($('d0'))},500);
+setTimeout(function(){$('dl').className='dl on'},1200);
+setTimeout(function(){mv($('del'))},1900);
+setTimeout(function(){$('dl').className='dl';[0,1,2].forEach(function(k){$('d'+k).className='doc gone';bd(k,true)});tx('cap','Show the real model before it surprises anyone.')},2700);
+setTimeout(A,6000)}
+A();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Mental Model</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">People build a working picture of how a system works, then act on that picture.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Norman (1988): good design lines up the designer’s model, the system as shown, and the user’s model.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/mental-model · Norman, 1988</p>
+<aside>[~3 min] Mental Models. Everybody who uses our product carries a little picture in their head of how it works, and they act on that picture, whether it’s right or not. [Point to the animation] Watch the first run. The user deletes a document on their phone. In their head, it’s gone from that phone. But their files are synced, so it disappears from the laptop and the tablet too. [Pause] Now here’s the key thing. Nothing malfunctioned. The system did exactly what it was built to do. It just didn’t match the picture in the user’s head. Don Norman wrote about this in 1988. He describes three models: the designer’s model, the user’s model, and what he calls the “system image,” which is everything the interface actually shows. And the user only ever sees the system image. They never see our architecture diagram. So that’s where the real model has to be made visible. [Wait for the second run] Watch the second run. One honest question, “Delete from all your devices?”, and the gap closes. [Ask the room: “What’s something in our product that works exactly as designed but still surprises people?”] [Let two or three people answer.] Let’s look at one model that works beautifully and one that people get wrong.</aside>
+</section>

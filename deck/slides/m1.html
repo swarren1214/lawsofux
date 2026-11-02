@@ -1,0 +1,34 @@
+<section id="m1" data-transition="fade" style="background:linear-gradient(135deg, #0058D1 0%, #4B3FD9 55%, #8E3FCF 100%);color:#FDFDFE;font-family:'Inter', Arial, sans-serif">
+<x-embed style="position:absolute;left:1060px;top:180px;width:720px;height:720px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden}
+.c{position:absolute;left:50%;top:50%}
+.ring{position:absolute;left:0;top:0;border:2px solid rgba(255,255,255,.22);border-radius:50%;transform:translate(-50%,-50%)}
+.orb{position:absolute;left:0;top:0;width:0;height:0;animation:spin linear infinite}
+.d{position:absolute;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 0 28px rgba(255,255,255,.55);animation:glow 3s ease-in-out infinite}
+.core{position:absolute;width:110px;height:110px;left:-55px;top:-55px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#FFFFFF,#FFD60A 55%,#FF9F0A);box-shadow:0 0 90px rgba(255,214,10,.75);animation:pulse 2.4s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes glow{0%,100%{opacity:.45}50%{opacity:1}}
+</style><div class="c" id="c"></div>
+<script>
+var c=document.getElementById('c');
+[170,290].forEach(function(r){var e=document.createElement('div');e.className='ring';e.style.width=(2*r)+'px';e.style.height=(2*r)+'px';c.appendChild(e)});
+var D=[[170,0,30,16],[170,120,22,16],[170,240,26,16],[290,30,36,28],[290,120,20,28],[290,210,28,28],[290,300,24,28]];
+D.forEach(function(p,i){var o=document.createElement('div');o.className='orb';o.style.animationDuration=p[3]+'s';o.style.animationDelay=(-p[1]/360*p[3])+'s';var d=document.createElement('div');d.className='d';d.style.width=p[2]+'px';d.style.height=p[2]+'px';d.style.left=(p[0]-p[2]/2)+'px';d.style.top=(-p[2]/2)+'px';d.style.animationDelay=(i*0.4)+'s';o.appendChild(d);c.appendChild(o)});
+var k=document.createElement('div');k.className='core';c.appendChild(k);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:200px;width:880px;font-size:32px;font-weight:600;color:#FDFDFE">Module 1 of 5</p>
+<h1 data-build-in="rise 2" style="position:absolute;left:128px;top:256px;width:900px;font-size:140px;font-weight:800;line-height:1.02;letter-spacing:-5px;color:#FDFDFE">How people decide</h1>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:590px;width:840px;font-size:44px;font-weight:500;line-height:1.3;letter-spacing:-0.5px;color:#FDFDFE">Seven laws about the limits of attention, memory and choice.</p>
+<div data-build-in="rise 4" style="position:absolute;left:128px;top:760px;width:900px;display:flex;flex-direction:row;flex-wrap:wrap;gap:14px">
+<p style="font-size:24px;font-weight:700;background:#1D1D1F;color:#FDFDFE;padding:12px 24px;border-radius:999px">Hick’s Law</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Choice Overload</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Cognitive Load</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Working Memory</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Miller’s Law</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Chunking</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Selective Attention</p>
+</div>
+<aside>[~1 min] This is session one: how people decide. Seven laws, all about the same idea, which is that attention and memory are a limited budget. [Point to the animation] The animation is the whole module in one picture. There’s one decision in the middle, and options orbiting around it. Every one of those options pulls a little bit of attention. So does every label, every field, every banner we add. None of them is free. Over the next seven laws we’ll look at where that budget goes and how to stop wasting it. [Ask the room, show of hands: “Who’s used an app this week where you had no idea which button to press?”] [Pause for hands.] Yeah. That’s what this module is about. We’ll start with Hick’s Law, because it’s the easiest one to see and the easiest one to measure.</aside>
+</section>

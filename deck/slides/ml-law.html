@@ -1,0 +1,46 @@
+<section id="ml-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.w{padding:48px;height:100%;display:flex;flex-direction:column;justify-content:center}
+.lab{font-size:24px;color:#6E6E73;font-weight:500;margin-bottom:14px;transition:color .3s}
+.r{display:grid;grid-template-columns:repeat(10,1fr);gap:10px;margin-bottom:48px}
+.bx{height:84px;border-radius:16px;background:#F5F5F7;border:2px solid #E8E8ED;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:#1D1D1F;transition:all .3s}
+.bx.on{background:#FDFDFE;border-color:#2997FF;box-shadow:0 6px 16px rgba(0,113,227,.18)}
+.bx.hid{color:#C7C7CC;background:#F5F5F7;border-color:#E8E8ED;box-shadow:none}
+.bx.ok{background:#E3F9E8;border-color:#30D158;color:#1E7A35}
+.bx.miss{background:#FFF1E0;border-color:#FF9F0A;color:#B25E00}
+.big{font-size:140px;font-weight:800;letter-spacing:-5px;line-height:1;background:linear-gradient(135deg,#0071E3,#7D5CF6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cap{font-size:24px;color:#6E6E73;font-weight:500;margin-top:10px}
+</style>
+<div class="w">
+<div class="lab" id="la">Watch the number…</div>
+<div class="r" id="a"></div>
+<div class="lab">What most people recall</div>
+<div class="r" id="b"></div>
+<div class="big">7 ± 2</div>
+<div class="cap">Miller’s classic estimate of short-term span</div>
+</div>
+<script>
+var A=document.getElementById('a'),B=document.getElementById('b'),la=document.getElementById('la'),ba=[],bb=[],i;
+for(i=0;10>i;i++){var x=document.createElement('div');x.className='bx';A.appendChild(x);ba.push(x);var y=document.createElement('div');y.className='bx';B.appendChild(y);bb.push(y)}
+function run(){var d=[];for(var k=0;10>k;k++){d.push(Math.floor(Math.random()*10))}
+la.textContent='Watch the number…';
+ba.forEach(function(x){x.textContent='';x.className='bx'});bb.forEach(function(x){x.textContent='';x.className='bx'});
+d.forEach(function(v,k){setTimeout(function(){ba[k].textContent=v;ba[k].className='bx on'},500+k*450)});
+var th=500+10*450+700;
+setTimeout(function(){la.textContent='Now it’s hidden';ba.forEach(function(x){x.textContent='•';x.className='bx hid'})},th);
+var t0=th+900;
+d.forEach(function(v,k){setTimeout(function(){if(7>k){bb[k].textContent=v;bb[k].className='bx ok'}else{bb[k].textContent='?';bb[k].className='bx miss'}},t0+k*260)});
+setTimeout(run,t0+10*260+2800)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#1D1D1F">Miller’s Law</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:470px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">The average person can hold about seven items, give or take two, in short-term memory.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:730px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Miller (1956). Treat it as a warning about memory, not a rule that menus need exactly seven items.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/millers-law · Miller, 1956</p>
+<aside>[~3 min] Okay, quick memory test before I say anything about this law. [Point to the animation] Watch the digits on the right and try to hold onto them. Don’t write anything down. [Wait for the digits to hide] Now, without looking, who can give me all of them? [Let a few people try.] Most of us get the first several and then it falls apart at the end. That’s what the bottom row is showing, and just so nobody quotes it, that row is illustrative, not a real result. This is Miller’s Law, from George Miller’s 1956 paper, “The Magical Number Seven, Plus or Minus Two.” The idea is that we can hold about seven things in short-term memory. Two caveats, and they matter. First, later research, Cowan’s work in particular, suggests the real limit for unrelated items is closer to four. Seven is generous. Second, and this is the big one: this law gets misused constantly to argue that menus can’t have more than seven items. But nobody memorizes a menu. It’s right there on the screen. Miller is about what people have to hold in their heads, not what they can see. [Pause] So keep that distinction in mind, because the next slide is basically about that exact myth.</aside>
+</section>

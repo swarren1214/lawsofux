@@ -1,0 +1,36 @@
+<section id="pk-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.lb{position:absolute;left:96px;font-size:24px;font-weight:700}
+.tr{position:absolute;left:96px;height:68px;border-radius:18px;border:3px dashed #C7C7CC}
+.wk{position:absolute;left:96px;height:68px;border-radius:18px;overflow:hidden;display:flex;width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1)}
+.core{width:90px;flex-shrink:0;background:linear-gradient(135deg,#FF375F,#BF5AF2)}
+.fill{flex:1;background:repeating-linear-gradient(135deg,#E4D4F5 0px,#E4D4F5 12px,#F1E8FA 12px,#F1E8FA 24px);display:flex;align-items:center;padding-left:18px;font-size:24px;color:#7A2FB0;font-weight:600;white-space:nowrap}
+.lg{position:absolute;left:96px;top:600px;display:flex;gap:28px;font-size:24px;color:#6E6E73;font-weight:500;align-items:center}
+.sw{display:inline-block;width:28px;height:20px;border-radius:6px;margin-right:10px;vertical-align:middle}
+.cap{position:absolute;left:48px;right:48px;top:680px;font-size:32px;font-weight:800;text-align:center;line-height:1.3}
+.t{position:absolute;left:48px;right:48px;top:44px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+</style>
+<div class="t">The same core task, given more and more time</div>
+<div class="lb" style="top:120px">Given 1 day</div><div class="tr" style="top:160px;width:90px"></div><div class="wk" id="w0" style="top:160px"><div class="core"></div><div class="fill"></div></div>
+<div class="lb" style="top:270px">Given 3 days</div><div class="tr" style="top:310px;width:270px"></div><div class="wk" id="w1" style="top:310px"><div class="core"></div><div class="fill">Polish</div></div>
+<div class="lb" style="top:420px">Given 6 days</div><div class="tr" style="top:460px;width:560px"></div><div class="wk" id="w2" style="top:460px"><div class="core"></div><div class="fill">Polish, meetings, rework</div></div>
+<div class="lg"><span><i class="sw" style="background:linear-gradient(135deg,#FF375F,#BF5AF2)"></i>Core work</span><span><i class="sw" style="background:#E4D4F5"></i>Expansion</span></div>
+<div class="cap">The task grows to fill the time.</div>
+<script>
+var W=[[90,'w0'],[270,'w1'],[560,'w2']];
+function run(){W.forEach(function(w){var e=document.getElementById(w[1]);e.style.transition='none';e.style.width='0';void e.offsetWidth;e.style.transition=''});
+W.forEach(function(w,i){setTimeout(function(){document.getElementById(w[1]).style.width=w[0]+'px'},400+i*1300)});
+setTimeout(run,7200)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Parkinson’s Law</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Any task will expand to fill all the time available for it.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">C. Northcote Parkinson, 1955, in a satirical essay in The Economist about growing bureaucracy.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/parkinsons-law · Parkinson, 1955</p>
+<aside>[~3 min] Parkinson’s Law: any task will expand to fill all the time available for it. Raise your hand if you’ve ever experienced this. [Pause for hands. It’s usually everyone.] Yeah. C. Northcote Parkinson wrote this in 1955, in a satirical essay in The Economist about government offices that kept growing no matter how much work there actually was. It was a joke, but it stuck, because everybody recognizes it. [Point to the animation] Look at the rows. The core work is exactly the same in every row. Given one day, three days or six days, the actual task doesn’t change. What grows is everything around it: extra polish, more meetings, rework. Now, here’s the part I find interesting. Lawsofux.com applies this law to users, not just teams. If a form gives people unlimited room and no guidance, it’ll take longer than it needs to. So there are two lessons. For users: design tasks so they can be done in as little time as possible, with defaults and autofill. For teams: fix the time, and let the scope flex. [Ask the room: “Where in our product do we give people an open-ended task when it could be quick?”] [Let two or three people answer.] Let’s look at both sides of that in the wild.</aside>
+</section>

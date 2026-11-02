@@ -1,0 +1,35 @@
+<section id="tl-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.t{position:absolute;left:48px;right:48px;top:44px;font-size:32px;font-weight:800;text-align:center}
+.b{position:absolute;width:220px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:#FFFFFF;transition:left .7s cubic-bezier(.5,0,.2,1),top .7s cubic-bezier(.5,0,.2,1),background .7s}
+.base{position:absolute;top:610px;width:240px;height:6px;border-radius:3px;background:#C7C7CC}
+.l{position:absolute;top:630px;width:240px;text-align:center;font-size:24px;font-weight:700}
+.n{position:absolute;top:668px;width:240px;text-align:center;font-size:24px;color:#6E6E73;font-weight:600}
+.tot{position:absolute;left:48px;right:48px;top:730px;font-size:24px;text-align:center;color:#6E6E73;font-weight:600}
+</style>
+<div class="t">Complexity can’t vanish. It can only move.</div>
+<div class="base" style="left:96px"></div><div class="base" style="left:416px"></div>
+<div class="l" style="left:96px;color:#D70015">People using it</div><div class="l" style="left:416px;color:#7A2FB0">Our system</div>
+<div class="n" id="nl" style="left:96px"></div><div class="n" id="nr" style="left:416px"></div>
+<div class="tot">Total complexity: 8, always</div>
+<script>
+var T=['Rules','Formats','Edge cases','Lookups','Validation','Branches','Fees','Sync'],B=[],L=[],R=[];
+T.forEach(function(t){var b=document.createElement('div');b.className='b';b.textContent=t;document.body.appendChild(b);B.push(b)});
+function place(){L.forEach(function(b,i){b.style.left='106px';b.style.top=(552-i*60)+'px';b.style.background='linear-gradient(135deg,#FF375F,#FF9F0A)'});R.forEach(function(b,i){b.style.left='426px';b.style.top=(552-i*60)+'px';b.style.background='linear-gradient(135deg,#BF5AF2,#5E5CE6)'});
+document.getElementById('nl').textContent=L.length+' to deal with';document.getElementById('nr').textContent=R.length+' handled for them'}
+function reset(){B.forEach(function(b){b.style.transition='none'});L=B.slice(0,6);R=B.slice(6);place();void document.body.offsetWidth;B.forEach(function(b){b.style.transition=''})}
+function step(){if(L.length>1){R.push(L.pop());place();setTimeout(step,800)}else{setTimeout(run,2600)}}
+function run(){reset();setTimeout(step,1200)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Tesler’s Law</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Every system has some complexity that can’t be removed. The only question is who deals with it.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Larry Tesler of Xerox PARC and Apple: better for engineers to absorb complexity than every user.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/teslers-law · Tesler, 1980s</p>
+<aside>[~3 min] Tesler’s Law. You’ll also hear it called the Law of Conservation of Complexity, and that name pretty much explains it. Every system has some amount of complexity that just can’t be removed. The only real question is who has to deal with it. [Point to the animation] Watch the blocks on the right. Each one is a piece of complexity. It can sit with the person using the product, or it can sit inside our system. When a block moves across, it doesn’t disappear. Look at the counter: the total stays at eight, always. Larry Tesler worked at Xerox PARC and later Apple, and his argument was basically this: it’s better for an engineer to spend an extra week making something simpler than for millions of users to each spend an extra minute. [Pause] Now notice one thing. One block never leaves the user’s side. Some complexity is just part of the task. If we pretend otherwise and try to hide all of it, we end up with software that guesses wrong. So the goal isn’t zero complexity for users. It’s putting each piece on purpose. [Ask the room: “What’s one thing our product makes people figure out that we could figure out for them?”] [Let two or three people answer.] Keep those in mind, because we’re about to see a couple of very familiar examples.</aside>
+</section>

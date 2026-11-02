@@ -1,0 +1,34 @@
+<section id="oc-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.card{position:absolute;left:156px;top:80px;width:440px;height:560px;border-radius:40px;background:#F5F5F7;padding:24px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.e{position:relative;flex-shrink:0;border-radius:14px;font-size:24px;font-weight:600;padding:12px 16px;max-height:100px;overflow:hidden;transition:max-height .45s,padding .45s,opacity .45s,margin .45s,background .4s,border-color .4s}
+.e.gone{max-height:0;padding:0 16px;opacity:0;margin-top:-12px}
+.x{position:absolute;left:12px;top:50%;height:4px;width:0;background:#FF3B30;border-radius:2px;transition:width .35s}
+.e.cut .x{width:90%}
+.e.ok{background:#E3F9E8 !important;border:3px solid #30D158 !important;color:#1E7A35 !important}
+.cap{position:absolute;left:48px;right:48px;top:680px;font-size:32px;font-weight:800;text-align:center;transition:opacity .25s}
+</style>
+<div class="card" id="c"></div>
+<div class="cap" id="cap"></div>
+<script>
+var D=[['Fall promo!',0,'background:linear-gradient(90deg,#FF9F0A,#FF375F);color:#FFFFFF'],['Service address',1,'background:#FDFDFE;border:3px solid #D2D2D7'],['Share with friends',0,'background:#E8E8ED'],['Pick a time',1,'background:#FDFDFE;border:3px solid #D2D2D7'],['Join our newsletter',0,'background:#E8E8ED'],['Referral code',0,'background:#E8E8ED'],['Quick survey',0,'background:#E8E8ED'],['Book visit',1,'background:linear-gradient(135deg,#2997FF,#5E5CE6);color:#FFFFFF;text-align:center']],E=[];
+var c=document.getElementById('c');
+D.forEach(function(d){var e=document.createElement('div');e.className='e';e.setAttribute('style',d[2]);e.appendChild(document.createTextNode(d[0]));var x=document.createElement('div');x.className='x';e.appendChild(x);c.appendChild(e);E.push(e)});
+function tx(t){var s=document.getElementById('cap');s.style.opacity=0;setTimeout(function(){s.textContent=t;s.style.opacity=1},250)}
+function run(){E.forEach(function(e){e.className='e'});tx('Remove one. Still works? Keep going.');var t=900;
+D.forEach(function(d,i){if(!d[1]){(function(e,t){setTimeout(function(){e.className='e cut'},t);setTimeout(function(){e.className='e cut gone'},t+450)})(E[i],t);t+=900}});
+setTimeout(function(){D.forEach(function(d,i){if(d[1]){E[i].className='e ok'}});tx('The simplest version that still works.')},t+300);
+setTimeout(run,t+3300)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Occam’s Razor</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">When options work equally well, choose the one with the fewest assumptions and parts.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Named for William of Ockham, a 14th-century friar. In design: cut whatever isn’t doing work.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/occams-razor · William of Ockham, 14th century</p>
+<aside>[~3 min] Occam’s Razor. It’s named after William of Ockham, a 14th-century friar, and it comes from philosophy. The idea is: when two explanations fit the facts equally well, go with the one that assumes less. In design and engineering, we turn that into a working method. When two options work equally well, pick the one with fewer assumptions and fewer parts. [Point to the animation] Watch the booking screen on the right. It starts with eight elements. Now we remove one at a time and ask, does booking still work? The fall promo goes. The share button goes. The newsletter, the referral code, the survey. All gone, and you can still book a visit with just an address, a time and a button. [Pause] I want to be careful here, because this isn’t minimalism for its own sake. Nobody’s saying empty screens are good. The point is that every element costs something. It costs attention for the user, it costs code to build and maintain, and it costs time to test. So every element should be doing real work. [Ask the room: “Think of one screen you know well. What’s on it that isn’t pulling its weight?”] [Let a few people answer.] Let’s look at a couple of famous examples of cutting to the core.</aside>
+</section>

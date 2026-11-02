@@ -1,0 +1,39 @@
+<section id="fw-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+svg{position:absolute;left:76px;top:110px}
+.l{position:absolute;font-size:24px;font-weight:600;color:#6E6E73}
+.fl{position:absolute;left:330px;top:310px;font-size:32px;font-weight:800;color:#1E7A35;transform:rotate(-37deg)}
+.d{position:absolute;width:40px;height:40px;border-radius:50%;background:#30D158;border:5px solid #FDFDFE;box-shadow:0 6px 16px rgba(0,0,0,.25);transform:translate(-50%,-50%);transition-property:left,top,background;transition-timing-function:cubic-bezier(.4,0,.2,1)}
+.bub{position:absolute;width:52px;height:52px;border-radius:50%;background:#FF3B30;color:#FFFFFF;font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,.9,.3,1.6)}
+.bub.on{transform:scale(1)}
+.st{position:absolute;left:48px;right:48px;top:680px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .25s}
+</style>
+<svg width="600" height="480" viewBox="0 0 600 480"><polygon points="40,380 520,20 580,20 580,90 110,440 40,440" fill="#30D158" opacity="0.18"/><line x1="40" y1="440" x2="580" y2="440" stroke="#AEAEB2" stroke-width="3"/><line x1="40" y1="440" x2="40" y2="20" stroke="#AEAEB2" stroke-width="3"/></svg>
+<div class="l" style="left:96px;top:72px">↑ Challenge</div><div class="l" style="left:560px;top:566px">Skill →</div>
+<div class="l" style="left:150px;top:190px;color:#D70015">Anxiety</div><div class="l" style="left:470px;top:470px;color:#8E8E93">Boredom</div>
+<div class="fl">Flow</div>
+<div class="bub" id="b">!</div>
+<div class="d" id="d"></div>
+<div class="st" id="s">In flow</div>
+<script>
+var d=document.getElementById('d'),b=document.getElementById('b'),s=document.getElementById('s');
+function mv(x,y,ms,c){d.style.transitionDuration=ms+'ms';d.style.left=x+'px';d.style.top=y+'px';d.style.background=c}
+function st(t){s.style.opacity=0;setTimeout(function(){s.textContent=t;s.style.opacity=1},250)}
+function run(){d.style.transitionDuration='0ms';d.style.left='166px';d.style.top='510px';d.style.background='#30D158';st('In flow');
+setTimeout(function(){mv(376,360,2000,'#30D158')},200);
+setTimeout(function(){mv(226,220,400,'#FF3B30');b.style.left='250px';b.style.top='140px';b.className='bub on';st('Interrupted')},2300);
+setTimeout(function(){b.className='bub';mv(376,360,1400,'#FF9F0A');st('Getting back into it…')},3600);
+setTimeout(function(){mv(596,180,1600,'#30D158');st('In flow')},5200);
+setTimeout(run,7400)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Flow</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Flow is a state of full, energized focus. Interfaces can protect it or break it.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Csikszentmihalyi (1990): flow happens when challenge matches skill and feedback is immediate.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/flow · Csikszentmihalyi, 1990</p>
+<aside>[~3 min] Okay, Flow. You all know this feeling even if you’ve never had a name for it. You’re deep in something, a bug, a spec, a spreadsheet, and you look up and two hours are gone. That’s flow. The psychologist Mihaly Csikszentmihalyi described it back in 1990, and his model is what you’re looking at on the right. [Point to the animation] Flow lives in that channel in the middle, where the challenge matches your skill. Too hard and you slide into anxiety. Too easy and you get bored. Watch the dot. It’s cruising along nicely, and then [Wait for the interruption] something knocks it out. And notice it doesn’t snap right back. It takes a while to climb back into the channel. [Pause] That recovery time is what I want you to remember. Every pop-up, every unnecessary alert, every confusing step doesn’t just cost the second it takes to dismiss. It costs the time to get back into the zone. [Ask the room: “When was the last time an app pulled you out of flow? What did it do?”] [Let two or three people answer.] Hold on to those, because next we’ll look at two products that do a good job of guarding that zone.</aside>
+</section>

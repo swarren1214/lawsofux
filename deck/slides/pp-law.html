@@ -1,0 +1,42 @@
+<section id="pp-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.b{position:absolute;width:24px;border-radius:8px 8px 4px 4px;background:#D2D2D7;transform-origin:bottom;transform:scaleY(0);transition:transform .5s cubic-bezier(.3,.9,.3,1.1),background .5s}
+.b.hi{background:linear-gradient(180deg,#FF375F,#BF5AF2)}
+.br{position:absolute;top:150px;height:20px;border:3px solid #BF5AF2;border-bottom:none;border-radius:10px 10px 0 0;opacity:0;transition:opacity .4s}
+.bl{position:absolute;top:104px;font-size:24px;font-weight:700;color:#7A2FB0;opacity:0;transition:opacity .4s}
+.on{opacity:1}
+.ax{position:absolute;left:60px;top:618px;font-size:24px;color:#6E6E73;font-weight:500}
+.big{position:absolute;left:48px;right:48px;top:670px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;opacity:0;transition:opacity .4s}
+.nt{position:absolute;left:48px;right:48px;top:736px;font-size:24px;color:#6E6E73;text-align:center}
+.t{position:absolute;left:48px;right:48px;top:44px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+</style>
+<div class="t">Usage by feature, ranked</div>
+<div class="br" id="br"></div><div class="bl" id="bl">Top 20% of features</div>
+<div class="ax">Features, most used → least used</div>
+<div class="big" id="big"></div>
+<div class="nt">Illustrative long-tail data</div>
+<script>
+var B=[],V=[],i,tot=0,tp=0,base=600,mx=400;
+for(i=0;20>i;i++){V.push(Math.pow(i+1,-1.6));tot+=V[i]}
+for(i=0;4>i;i++){tp+=V[i]}
+for(i=0;20>i;i++){var b=document.createElement('div');b.className='b';var h=Math.max(6,mx*V[i]);b.style.left=(60+i*32)+'px';b.style.top=(base-h)+'px';b.style.height=h+'px';b.style.transitionDelay=(i*0.05)+'s';document.body.appendChild(b);B.push(b)}
+var br=document.getElementById('br'),bl=document.getElementById('bl'),big=document.getElementById('big');
+br.style.left='56px';br.style.width='128px';bl.style.left='56px';
+big.textContent='≈ '+Math.round(tp/tot*100)+'% of all use';
+function run(){B.forEach(function(b){b.className='b';b.style.transform='scaleY(1)'});
+setTimeout(function(){for(var k=0;4>k;k++){B[k].className='b hi'}br.className='br on';bl.className='bl on'},1600);
+setTimeout(function(){big.className='big on'},2200);
+setTimeout(function(){B.forEach(function(b){b.style.transform='scaleY(0)'});br.className='br';bl.className='bl';big.className='big'},5600);
+setTimeout(run,6800)}
+setTimeout(run,300);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Pareto Principle</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">For many outcomes, roughly 80% of the effects come from 20% of the causes.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Named after economist Vilfredo Pareto, who noticed about 80% of Italy’s land was owned by 20% of its people.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/pareto-principle · Pareto, 1896</p>
+<aside>[~3 min] The Pareto Principle. You’ve probably heard it as the 80/20 rule. For many outcomes, roughly 80% of the effects come from 20% of the causes. It’s named after the economist Vilfredo Pareto, who noticed that about 80% of the land in Italy was owned by about 20% of the people. [Point to the chart] Here’s what it usually looks like in a product. Twenty features, ranked from most used to least used. The top four, that’s the top 20%, account for roughly 80% of all the usage. Then there’s this long tail of features people barely touch. [Pause] Now, a caveat. This chart is illustrative, not real data. And the actual split varies. Sometimes it’s 70/30, sometimes 90/10. 80/20 is a pattern, not a law of nature. But that shape shows up everywhere: usage, revenue, bugs, support tickets, page views. So here’s the practical lesson. If most of the value sits in a few places, spreading our effort evenly across everything is a mistake. We should find the vital few and give them a lot more care. [Ask the room: “If you had to guess, what are the top three screens in our product by use?”] [Let a few people guess. Note whether the teams agree; they often don’t.] Let’s look at two examples where counting changed the priorities.</aside>
+</section>

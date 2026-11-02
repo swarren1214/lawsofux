@@ -1,0 +1,46 @@
+<section id="dt-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.hd{position:absolute;top:56px;width:290px;font-size:24px;font-weight:700;text-align:center}
+.ph{position:absolute;top:110px;width:290px;height:520px;border-radius:42px;background:#1D1D1F;padding:12px}
+.sc{width:100%;height:100%;border-radius:32px;background:#F5F5F7;padding:18px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.img{height:200px;border-radius:16px;background:linear-gradient(135deg,#9FC5F8,#5E8DE6)}
+.b{height:12px;border-radius:6px;background:#C7C7CC}
+.row{position:relative;display:flex;align-items:center;gap:12px;margin-top:10px;font-size:24px;font-weight:600}
+.rip{position:absolute;left:-10px;top:-10px;width:60px;height:60px;border-radius:50%;background:rgba(0,113,227,.35);transform:scale(0);opacity:0}
+.rip.go{animation:rp .6s ease-out}
+@keyframes rp{0%{transform:scale(0);opacity:1}100%{transform:scale(2.2);opacity:0}}
+.dim{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(245,245,247,.8);opacity:0;transition:opacity .15s}
+.dim.on{opacity:1}
+.sp{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;border:7px solid #D2D2D7;border-top-color:#0071E3;animation:spin .8s linear infinite;opacity:0}
+.sp.on{opacity:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ms{position:absolute;top:656px;width:290px;text-align:center;font-size:44px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.cap{position:absolute;left:48px;right:48px;top:730px;font-size:24px;color:#6E6E73;text-align:center;font-weight:500}
+path{transition:fill .2s}
+</style>
+<div class="hd" style="left:48px;color:#D70015">Slow response</div><div class="hd" style="left:414px;color:#1E7A35">Fast response</div>
+<div class="ph" style="left:48px"><div class="sc"><div class="img"></div><div class="b" style="width:80%"></div><div class="b" style="width:60%"></div><div class="row"><div class="rip" id="r1"></div><svg width="40" height="40" viewBox="0 0 40 40"><path id="h1" d="M20 35 L6 21 A8 8 0 0 1 20 9 A8 8 0 0 1 34 21 Z" fill="#C7C7CC"/></svg><span id="c1">12</span></div><div class="dim" id="d1"></div><div class="sp" id="s1"></div></div></div>
+<div class="ph" style="left:414px"><div class="sc"><div class="img"></div><div class="b" style="width:80%"></div><div class="b" style="width:60%"></div><div class="row"><div class="rip" id="r2"></div><svg width="40" height="40" viewBox="0 0 40 40"><path id="h2" d="M20 35 L6 21 A8 8 0 0 1 20 9 A8 8 0 0 1 34 21 Z" fill="#C7C7CC"/></svg><span id="c2">12</span></div></div></div>
+<div class="ms" id="m1" style="left:48px">0 ms</div><div class="ms" id="m2" style="left:414px">0 ms</div>
+<div class="cap">Same tap. Illustrative timing.</div>
+<script>
+function $(i){return document.getElementById(i)}
+function run(){$('h1').setAttribute('fill','#C7C7CC');$('h2').setAttribute('fill','#C7C7CC');$('c1').textContent='12';$('c2').textContent='12';$('m1').textContent='0 ms';$('m2').textContent='0 ms';
+setTimeout(tap,900);setTimeout(run,5200)}
+function tap(){['r1','r2'].forEach(function(r){var e=$(r);e.className='rip';void e.offsetWidth;e.className='rip go'});
+setTimeout(function(){$('h2').setAttribute('fill','#FF375F');$('c2').textContent='13';$('m2').textContent='80 ms'},80);
+$('d1').className='dim on';$('s1').className='sp on';var t0=Date.now();
+var iv=setInterval(function(){var e=Math.min(Date.now()-t0,1600);$('m1').textContent=(Math.round(e/10)*10)+' ms';if(e>=1600){clearInterval(iv);$('d1').className='dim';$('s1').className='sp';$('h1').setAttribute('fill','#FF375F');$('c1').textContent='13'}},40)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Doherty Threshold</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">When a system responds in under about 400 milliseconds, people stay engaged and get more done.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Doherty &amp; Thadani (1982, IBM): faster system response times led to sharply higher productivity.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/doherty-threshold · Doherty &amp; Thadani, 1982</p>
+<aside>[~3 min] The Doherty Threshold. When a system responds in under about 400 milliseconds, people stay engaged and get more done. [Point to the animation] Both phones get the same tap on the heart. The slow one throws up a spinner and blocks the screen for over a second and a half. The fast one just responds. Timings are illustrative, but you can feel the difference just watching. This comes from a 1982 IBM paper by Walter Doherty and Ahrvind Thadani. They argued that productivity rises sharply once response time drops below about 400 milliseconds, because people stop losing their train of thought while they wait. [Pause] Engineers, here’s the practical point for you. Perceived speed matters as much as actual speed. A lot of the time you can respond instantly on screen and finish the real work in the background. [Ask the room: “What’s the slowest-feeling action in our product right now?”] [Let two or three people answer.] Write those down. Let’s see how other apps feel fast even when they aren’t.</aside>
+</section>

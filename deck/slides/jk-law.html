@@ -1,0 +1,51 @@
+<section id="jk-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.pg{position:absolute;left:96px;top:100px;width:560px;height:520px;border-radius:28px;background:#F5F5F7;border:2px solid #E8E8ED;overflow:hidden}
+.hd{position:absolute;left:0;right:0;top:0;height:76px;background:#FDFDFE;border-bottom:2px solid #E8E8ED}
+.logo{position:absolute;left:24px;top:24px;width:70px;height:28px;border-radius:8px;background:linear-gradient(135deg,#FF9F0A,#FF375F)}
+.sr{position:absolute;left:120px;top:22px;width:300px;height:32px;border-radius:16px;background:#E8E8ED}
+.ct{position:absolute;width:56px;height:56px;border-radius:16px;background:#FDFDFE;display:flex;align-items:center;justify-content:center;transition:opacity .3s,transform .3s cubic-bezier(.3,.9,.3,1.6)}
+.ct.p{transform:scale(1.25)}
+.ct.h{opacity:0}
+.it{position:absolute;width:150px;height:150px;border-radius:18px;background:#E8E8ED}
+.c{position:absolute;width:32px;height:32px;border-radius:50%;background:rgba(29,29,31,.85);border:4px solid #FDFDFE;box-shadow:0 4px 12px rgba(0,0,0,.35);transform:translate(-50%,-50%)}
+.q{position:absolute;left:600px;top:150px;width:48px;height:48px;border-radius:50%;background:#FF9F0A;color:#FFFFFF;font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,.9,.3,1.6)}
+.q.on{transform:scale(1)}
+.st{position:absolute;left:48px;right:48px;top:44px;font-size:32px;font-weight:800;text-align:center;transition:opacity .25s}
+.cap{position:absolute;left:48px;right:48px;top:660px;font-size:32px;font-weight:700;text-align:center;color:#6E6E73;transition:opacity .25s}
+</style>
+<div class="st" id="st"></div>
+<div class="pg"><div class="hd"><div class="logo"></div><div class="sr"></div></div>
+<div class="it" style="left:28px;top:110px"></div><div class="it" style="left:204px;top:110px"></div><div class="it" style="left:380px;top:110px"></div>
+<div class="it" style="left:28px;top:290px"></div><div class="it" style="left:204px;top:290px"></div><div class="it" style="left:380px;top:290px"></div>
+<div class="ct" id="tr" style="left:486px;top:10px"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M3 5 H8 L12 22 H27 L30 10 H10" fill="none" stroke="#1D1D1F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="14" cy="28" r="2.5" fill="#1D1D1F"/><circle cx="25" cy="28" r="2.5" fill="#1D1D1F"/></svg></div>
+<div class="ct h" id="bl" style="left:20px;top:452px;background:#E8E8ED"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M3 5 H8 L12 22 H27 L30 10 H10" fill="none" stroke="#1D1D1F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="14" cy="28" r="2.5" fill="#1D1D1F"/><circle cx="25" cy="28" r="2.5" fill="#1D1D1F"/></svg></div>
+</div>
+<div class="q" id="q">?</div>
+<div class="c" id="c"></div>
+<div class="cap" id="cap"></div>
+<script>
+function $(i){return document.getElementById(i)}
+var c=$('c');
+function mv(x,y,ms){c.style.transition='left '+ms+'ms cubic-bezier(.4,0,.2,1), top '+ms+'ms cubic-bezier(.4,0,.2,1)';c.style.left=x+'px';c.style.top=y+'px'}
+function tx(i,t){var e=$(i);e.style.opacity=0;setTimeout(function(){e.textContent=t;e.style.opacity=1},250)}
+function pulse(i){var e=$(i);e.className=e.className+' p';setTimeout(function(){e.className=e.className.replace(' p','')},300)}
+function reset(){c.style.transition='none';c.style.left='380px';c.style.top='740px';void c.offsetWidth}
+function A(){reset();$('tr').className='ct';$('bl').className='ct h';$('q').className='q';tx('st','Every other store');tx('cap','The cart is top-right.');
+setTimeout(function(){mv(610,138,700)},500);setTimeout(function(){pulse('tr')},1250);setTimeout(B,3000)}
+function B(){reset();$('tr').className='ct h';$('bl').className='ct';tx('st','Your store');tx('cap','Habit sends them top-right first.');
+setTimeout(function(){mv(610,138,700)},500);setTimeout(function(){$('q').className='q on'},1300);
+setTimeout(function(){$('q').className='q';mv(380,330,700)},2200);setTimeout(function(){mv(144,580,700)},3000);setTimeout(function(){pulse('bl')},3750);setTimeout(A,5600)}
+A();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Jakob’s Law</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">People spend most of their time in other products, so they expect yours to work the same way.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Named for Jakob Nielsen of Nielsen Norman Group. Familiar patterns let people reuse what they already know.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/jakobs-law · Nielsen, 2000</p>
+<aside>[~3 min] Jakob’s Law, named for Jakob Nielsen of Nielsen Norman Group. The idea is simple: people spend most of their time in other products, not ours. So they expect ours to work the same way as everything else. [Point to the animation] Watch the pointer in the second store. Where does it go first? Straight to the top-right corner, because that’s where every other store puts the cart. It finds nothing, and only then does it start hunting around. [Pause] I want to be clear, that first move isn’t a mistake. That’s experience. Your users are bringing years of habits from other apps every time they open ours. Which means conventions are basically free usability. People already know how to use them, and you didn’t have to teach them anything. Breaking a convention can be the right call, but it should take a strong reason and a big payoff, because every single user pays the cost of relearning it. [Ask the room: “Can anyone think of an app that broke a convention and it actually worked?”] [Let a couple of people answer.] Those exist, but they’re rarer than we’d like to think. Let’s look at two conventions you rely on every day without noticing.</aside>
+</section>

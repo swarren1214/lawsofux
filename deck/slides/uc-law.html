@@ -1,0 +1,27 @@
+<section id="uc-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.lab{position:absolute;left:48px;right:48px;top:48px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+.big{position:absolute;left:48px;right:48px;top:690px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .3s}
+svg{position:absolute;left:48px;top:120px}
+</style>
+<div class="lab">Blue dots, orange dots. Then a few lines.</div><div class="big" id="t">Grouped by color</div>
+<svg width="656" height="540" viewBox="0 0 656 540"><g id="L"></g><g id="C"></g></svg>
+<script>
+var NS='http://www.w3.org/2000/svg',P=[[70,90,0],[230,60,1],[400,120,0],[580,70,1],[100,290,1],[290,250,0],[460,310,1],[600,260,0],[180,460,0],[480,470,1]],K=[[0,1],[2,3],[4,5],[6,7],[8,9]],Ls=[],col=['#2997FF','#FF9F0A'];
+var L=document.getElementById('L'),C=document.getElementById('C'),t=document.getElementById('t');
+K.forEach(function(k){var a=P[k[0]],b=P[k[1]],l=document.createElementNS(NS,'line');l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]);l.setAttribute('stroke','#1D1D1F');l.setAttribute('stroke-width','7');l.setAttribute('stroke-linecap','round');var n=Math.hypot(b[0]-a[0],b[1]-a[1]);l.len=n;l.style.strokeDasharray=n;l.style.strokeDashoffset=n;l.style.transition='stroke-dashoffset .9s ease';L.appendChild(l);Ls.push(l)});
+P.forEach(function(p){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1]);c.setAttribute('r','28');c.setAttribute('fill',col[p[2]]);C.appendChild(c)});
+var on=false;
+function go(){on=!on;Ls.forEach(function(l){l.style.strokeDashoffset=on?0:l.len});t.style.opacity=0;setTimeout(function(){t.textContent=on?'Grouped by connection':'Grouped by color';t.style.opacity=1},300);setTimeout(go,3400)}
+setTimeout(go,2600);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Uniform Connectedness</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Things joined by a line or frame look more related than things that aren’t.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Palmer &amp; Rock (1994): a connecting line can override both color and spacing as a grouping cue.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/law-of-uniform-connectedness · Palmer &amp; Rock, 1994</p>
+<aside>[~3 min] Uniform Connectedness. Things joined by a line or a frame look more related than things that aren’t. [Point to the animation] Watch the dots before any lines show up. Everyone groups them by color, blues with blues, oranges with oranges. That’s similarity, the law we just did. [Wait for the lines to draw in] Now five lines draw in, each one joining a blue to an orange, and the grouping flips. Connection beats similarity. That’s from Palmer and Rock in 1994: a connecting line can override both color and spacing as a grouping cue. [Pause] It’s why steppers, timelines, flow diagrams and connected toggles work so well. A line tells people “these go together, and probably in this order.” The catch is the same as with boxes. A stray divider or decorative line can tie together things that have nothing to do with each other, and people will believe it. [Ask the room: “Where have you seen a line on a screen that was just decoration but made things look connected?”] [Let two or three people answer.] Let’s see this in a map almost everyone recognizes.</aside>
+</section>

@@ -1,0 +1,27 @@
+<section id="cr-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.d{position:absolute;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#BF5AF2,#5E5CE6)}
+.bx{position:absolute;height:80px;border-radius:26px;background:rgba(191,90,242,.10);border:3px solid rgba(191,90,242,.55);opacity:0;transform:scale(.85);transition:all .6s cubic-bezier(.2,.9,.3,1.3)}
+.bx.on{opacity:1;transform:scale(1)}
+.lab{position:absolute;left:48px;right:48px;top:48px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+.big{position:absolute;left:48px;right:48px;top:660px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .3s}
+</style>
+<div class="lab">Watch which dots pair up.</div><div class="big" id="t">Grouped by spacing</div>
+<script>
+var X=[0,56,166,222,332,388,498,554],ox=77,R=[190,330,470],B=[];
+R.forEach(function(y){[1,3,5].forEach(function(k){var b=document.createElement('div');b.className='bx';b.style.left=(ox+X[k]-18)+'px';b.style.top=(y-18)+'px';b.style.width=(X[k+1]-X[k]+44+36)+'px';document.body.appendChild(b);B.push(b)})});
+R.forEach(function(y){X.forEach(function(x){var d=document.createElement('div');d.className='d';d.style.left=(ox+x)+'px';d.style.top=y+'px';document.body.appendChild(d)})});
+var on=false,t=document.getElementById('t');
+function go(){on=!on;B.forEach(function(b){b.className=on?'bx on':'bx'});t.style.opacity=0;setTimeout(function(){t.textContent=on?'Grouped by region':'Grouped by spacing';t.style.opacity=1},300);setTimeout(go,3200)}
+setTimeout(go,2600);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Law of Common Region</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Things inside a shared boundary are seen as a group, even when they’re far apart.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Palmer (1992) showed a shared region can override spacing: the box wins over proximity.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/law-of-common-region · Palmer, 1992</p>
+<aside>[~3 min] Next up is the Law of Common Region. It’s simple: put a box around some things and people see them as a group, even if they’re far apart. [Point to the animation] Watch the dots first, before anything else shows up. You see pairs, right? The dots that sit close together look like they belong together. That’s proximity, the law we just covered. [Wait for the boxes to appear] Now the boxes draw in around dots that are actually farther apart, and the pairs flip. The box wins. That comes from Stephen Palmer’s work in 1992: a shared region can override spacing. It’s why cards, panels and shaded backgrounds are so powerful in an interface. [Pause] Here’s the flip side, and it matters just as much. A box around the wrong things creates a false group, and it’s just as convincing. So every border and every background color you add is a statement: “these belong together.” [Ask the room: “Has anyone ever had to explain that two things inside the same panel aren’t actually related?”] [Let two or three people answer.] Okay, let’s look at two places where containers carry a ton of weight.</aside>
+</section>

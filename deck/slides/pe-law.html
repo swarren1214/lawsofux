@@ -1,0 +1,43 @@
+<section id="pe-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.t{position:absolute;left:48px;right:48px;top:44px;font-size:32px;font-weight:800;text-align:center;transition:opacity .25s}
+svg{position:absolute;left:48px;top:110px}
+.ax{position:absolute;font-size:24px;color:#6E6E73;font-weight:500}
+.lb{position:absolute;font-size:24px;font-weight:800;opacity:0;transition:opacity .3s}
+.lb.on{opacity:1}
+.m{position:absolute;left:96px;right:96px;top:600px}
+.ml{font-size:24px;color:#6E6E73;font-weight:600}
+.bar{margin-top:12px;height:28px;border-radius:14px;background:#E8E8ED;overflow:hidden}
+.f{height:100%;width:0;border-radius:14px;background:linear-gradient(90deg,#FF9F0A,#30D158);transition:width .8s cubic-bezier(.3,.9,.3,1)}
+.cap{position:absolute;left:48px;right:48px;top:700px;font-size:28px;font-weight:600;text-align:center;color:#6E6E73}
+</style>
+<div class="t" id="t"></div>
+<div class="ax" style="left:60px;top:96px">↑ Pleasant</div><div class="ax" style="left:600px;top:540px">Time →</div>
+<svg width="656" height="430" viewBox="0 0 656 430"><line x1="20" y1="420" x2="640" y2="420" stroke="#D2D2D7" stroke-width="3"/><path id="p" fill="none" stroke="#1D1D1F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle id="cp" r="14" fill="#FF3B30" opacity="0"/><circle id="ce" r="14" fill="#0071E3" opacity="0"/></svg>
+<div class="lb" id="lp" style="color:#D70015">Peak</div><div class="lb" id="le" style="color:#0058D1">End</div>
+<div class="m"><div class="ml">Remembered as</div><div class="bar"><div class="f" id="f"></div></div></div>
+<div class="cap">Illustrative shapes, after Kahneman’s cold-water study.</div>
+<script>
+function $(i){return document.getElementById(i)}
+var E=[{t:'A: shorter, ends badly',p:[[40,180],[120,190],[200,330],[280,240],[400,310]],m:35},{t:'B: longer, ends gently',p:[[40,180],[120,190],[200,330],[280,240],[400,260],[600,190]],m:75}],k=0;
+function run(){var e=E[k],d='';e.p.forEach(function(q,i){d+=(i?' L':'M')+q[0]+' '+q[1]});var p=$('p');p.setAttribute('d',d);var L=p.getTotalLength();p.style.transition='none';p.style.strokeDasharray=L;p.style.strokeDashoffset=L;void p.getBoundingClientRect();
+var t=$('t');t.style.opacity=0;setTimeout(function(){t.textContent='Experience '+e.t;t.style.opacity=1},250);
+['cp','ce'].forEach(function(i){$(i).setAttribute('opacity','0')});$('lp').className='lb';$('le').className='lb';$('f').style.width='0';
+setTimeout(function(){p.style.transition='stroke-dashoffset 1.6s ease';p.style.strokeDashoffset=0},300);
+var pk=e.p[2],en=e.p[e.p.length-1];
+setTimeout(function(){var a=$('cp'),b=$('ce');a.setAttribute('cx',pk[0]);a.setAttribute('cy',pk[1]);a.setAttribute('opacity','1');b.setAttribute('cx',en[0]);b.setAttribute('cy',en[1]);b.setAttribute('opacity','1');
+var lp=$('lp'),le=$('le');lp.style.left=(48+pk[0]-24)+'px';lp.style.top=(110+pk[1]+22)+'px';le.style.left=(48+en[0]-20)+'px';le.style.top=(110+en[1]-56)+'px';lp.className='lb on';le.className='lb on'},2000);
+setTimeout(function(){$('f').style.width=e.m+'%'},2500);
+k=1-k;setTimeout(run,6000)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Peak-End Rule</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">People judge an experience mostly by its most intense moment and how it ended.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Kahneman et al. (1993): people preferred a longer unpleasant experience if it ended less badly.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/peak-end-rule · Kahneman et al., 1993</p>
+<aside>[~3 min] Okay, the Peak-End Rule. Short version: when people look back on an experience, they don’t average it out. They remember the most intense moment and how it ended. That’s pretty much it. The best-known study behind this is from Daniel Kahneman and colleagues in 1993, and it’s a strange one. People held a hand in painfully cold water for sixty seconds. In a second trial they did the same sixty seconds, then kept their hand in for thirty more while the water warmed up just slightly. So the second trial was objectively worse. More total discomfort. [Pause] And yet most people chose to repeat the longer one. Why? Because it ended better. [Point to the animation] That’s the shape you’re seeing on the right. It’s a sketch, by the way, not real data. The memory isn’t the area under the curve. It’s the highest or lowest point, plus wherever the line lands at the end. [Ask the room: “Think of a bad customer service call you’ve had. Do you remember the whole call, or the worst moment and how it ended?”] [Let two or three people answer.] Yeah. For us, this means the last screen of a flow carries way more weight than its share of the time. So let’s look at a couple of companies that designed their endings on purpose.</aside>
+</section>

@@ -1,0 +1,24 @@
+<section id="vr-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.t{position:absolute;width:96px;height:96px;border-radius:26px;background:#E8E8ED;transition:all .6s cubic-bezier(.3,.9,.3,1.3)}
+.t.on{background:linear-gradient(135deg,#FF9F0A,#FF375F);transform:scale(1.12);box-shadow:0 14px 34px rgba(255,90,60,.4);border-radius:48px}
+.lab{position:absolute;left:48px;right:48px;top:48px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+.big{position:absolute;left:48px;right:48px;top:680px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px}
+</style>
+<div class="lab">Twenty tiles. Which one will you remember?</div><div class="big">The odd one out, every time.</div>
+<script>
+var T=[],i,last=-1;
+for(i=0;20>i;i++){var d=document.createElement('div');d.className='t';d.style.left=(100+(i%5)*114)+'px';d.style.top=(150+Math.floor(i/5)*114)+'px';document.body.appendChild(d);T.push(d)}
+function go(){var k=Math.floor(Math.random()*20);if(k==last){k=(k+7)%20}if(last>=0){T[last].className='t'}T[k].className='t on';last=k;setTimeout(go,2400)}
+setTimeout(go,600);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Von Restorff Effect</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">When several similar things appear together, the one that differs is the one people remember.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Von Restorff (1933): in lists of similar items, the single item that stood out was recalled far better.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/von-restorff-effect · von Restorff, 1933</p>
+<aside>[~3 min] The Von Restorff Effect. When several similar things show up together, the one that’s different is the one people remember. [Point to the animation] Remember the cover slide, and the glowing orange tile everyone noticed first? This is that law. Hedwig von Restorff showed in 1933 that in a list of similar items, the one item that stood out was recalled far better than its neighbors. [Pause] In interfaces, it’s the principle behind primary buttons, recommended plans and alerts. But here’s the catch: it only works by contrast. Every extra thing you highlight weakens everything else you’ve highlighted, until nothing stands out at all. I think of emphasis as a budget, and honestly, most products overspend it. [Ask the room: “Show of hands: who thinks our busiest screen has more than three things trying to be the most important?”] [Count the hands and smile.] Yeah. Let’s look at two examples that spend that budget wisely.</aside>
+</section>

@@ -1,0 +1,51 @@
+<section id="co-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.w{padding:48px;height:100%;display:flex;flex-direction:column}
+.seg{display:flex;background:#E8E8ED;border-radius:999px;padding:6px;position:relative;align-self:center}
+.seg div{position:relative;z-index:1;font-size:24px;font-weight:600;padding:12px 36px;color:#6E6E73;transition:color .4s}
+.seg div.on{color:#1D1D1F}
+.knob{position:absolute;top:6px;bottom:6px;left:6px;width:100px;border-radius:999px;background:#FDFDFE;box-shadow:0 4px 12px rgba(0,0,0,.12);transition:all .5s cubic-bezier(.3,.9,.3,1)}
+.shelf{margin-top:32px;height:300px;border-radius:28px;background:#F5F5F7;display:flex;align-items:center;justify-content:center}
+.jars{display:grid;gap:14px;justify-content:center}
+.jar{border-radius:10px 10px 16px 16px;position:relative;transform:scale(0);transition:transform .4s cubic-bezier(.2,.9,.3,1.4)}
+.jar:before{content:"";position:absolute;left:14%;right:14%;top:-9px;height:11px;border-radius:4px;background:#8E8E93}
+.jar.in{transform:scale(1)}
+.m{margin-top:36px}
+.row{display:flex;justify-content:space-between;align-items:baseline}
+.lab{font-size:24px;color:#6E6E73;font-weight:500}
+.val{font-size:44px;font-weight:800;letter-spacing:-1px}
+.bar{margin-top:10px;height:22px;border-radius:11px;background:#E8E8ED;overflow:hidden}
+.f{height:100%;width:0;border-radius:11px;transition:width .9s cubic-bezier(.3,.9,.3,1)}
+.f1{background:linear-gradient(90deg,#2997FF,#7D5CF6)}
+.f2{background:linear-gradient(90deg,#30D158,#0FB5AE)}
+</style>
+<div class="w">
+<div class="seg"><span class="knob" id="k"></span><div id="a">24 jams</div><div id="b">6 jams</div></div>
+<div class="shelf"><div class="jars" id="j"></div></div>
+<div class="m"><div class="row"><span class="lab">Stopped to look</span><span class="val" id="v1"></span></div><div class="bar"><div class="f f1" id="b1"></div></div></div>
+<div class="m"><div class="row"><span class="lab">Bought, of those who stopped</span><span class="val" id="v2"></span></div><div class="bar"><div class="f f2" id="b2"></div></div></div>
+</div>
+<script>
+var C=['#FF453A','#FF9F0A','#FFD60A','#30D158','#0FB5AE','#2997FF','#5E5CE6','#BF5AF2'];
+var S=[{n:24,c:8,s:44,h:56,v1:60,v2:3},{n:6,c:3,s:80,h:100,v1:40,v2:30}],i=0;
+function show(){var s=S[i],j=document.getElementById('j');j.innerHTML='';j.style.gridTemplateColumns='repeat('+s.c+','+s.s+'px)';
+var on=document.getElementById(i?'b':'a'),off=document.getElementById(i?'a':'b');on.className='on';off.className='';
+var k=document.getElementById('k');k.style.left=on.offsetLeft+'px';k.style.width=on.offsetWidth+'px';
+document.getElementById('b1').style.width='0';document.getElementById('b2').style.width='0';
+document.getElementById('v1').textContent=s.v1+'%';document.getElementById('v2').textContent=s.v2+'%';
+for(var x=0;s.n>x;x++){(function(x){var d=document.createElement('div');d.className='jar';d.style.width=s.s+'px';d.style.height=s.h+'px';d.style.background=C[x%8];j.appendChild(d);setTimeout(function(){d.className='jar in'},120+x*45)})(x)}
+setTimeout(function(){document.getElementById('b1').style.width=s.v1+'%';document.getElementById('b2').style.width=s.v2+'%'},1400);
+i=1-i;setTimeout(show,5600)}
+show();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#1D1D1F">Choice Overload</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:470px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Give people too many options and they get overwhelmed. Many choose nothing at all.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:730px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Iyengar &amp; Lepper (2000): a 24-jam display drew more shoppers, but a 6-jam display sold far more.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/choice-overload · Iyengar &amp; Lepper, 2000</p>
+<aside>[~3 min] Hick’s Law says more options make people slower. Choice Overload says that past a certain point, a lot of people just don’t choose at all. [Point to the animation] This is the famous jam study by Sheena Iyengar and Mark Lepper, from 2000, run at a grocery store. Watch it flip between the two tables. With 24 jams on display, about 60% of people walking by stopped to look. With 6 jams, about 40% stopped. So the big display wins, right? Except only about 3% of the people who stopped at the big display bought a jar, versus about 30% at the small one. More attention, fewer decisions. [Pause] Now, I want to be honest about the research, because someone will look it up. Later meta-analyses found the effect is inconsistent. It doesn’t always show up. It shows up most when the options are hard to compare, when people don’t already know what they want, and when there’s no clear recommended choice. [Ask the room: “Does that combination sound like any screens we own?”] [Let a few answer. Sign-up and configuration screens usually come up.] Exactly. That’s where it bites. Let’s look at it outside the lab.</aside>
+</section>

@@ -1,0 +1,37 @@
+<section id="cb-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.d{position:absolute;left:0;top:0;right:0;bottom:0;transition:opacity .5s}
+.d.off{opacity:0}
+.h{position:absolute;left:48px;right:48px;top:52px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px}
+.s{position:absolute;left:48px;right:48px;top:116px;font-size:24px;color:#6E6E73;text-align:center;font-weight:500}
+.c{position:absolute;top:190px;width:300px;height:330px;border-radius:30px;background:#F5F5F7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:transform .5s cubic-bezier(.3,.9,.3,1.3)}
+.big{font-size:88px;font-weight:800;letter-spacing:-3px;line-height:1}
+.sm{font-size:24px;color:#6E6E73;font-weight:600}
+.was{font-size:32px;color:#AEAEB2;text-decoration:line-through;font-weight:700}
+.v{position:absolute;top:548px;width:300px;text-align:center;font-size:28px;font-weight:800}
+.cap{position:absolute;left:48px;right:48px;top:680px;font-size:32px;font-weight:700;text-align:center}
+</style>
+<div class="d" id="a"><div class="h">Anchoring</div><div class="s">The same price, seen two ways</div>
+<div class="c" style="left:56px"><div class="big">$80</div><div class="sm">Pest service</div></div>
+<div class="c" style="left:396px"><div class="was">$120</div><div class="big" style="color:#C25E00">$80</div><div class="sm">Pest service</div></div>
+<div class="v" style="left:56px;color:#6E6E73">Feels fine</div><div class="v" style="left:396px;color:#C25E00">Feels like a deal</div></div>
+<div class="d off" id="b"><div class="h">Framing</div><div class="s">The same fact, worded two ways</div>
+<div class="c" style="left:56px"><div class="big" style="color:#1E7A35">90%</div><div class="sm">of jobs on time</div></div>
+<div class="c" style="left:396px"><div class="big" style="color:#D70015;font-size:64px">1 in 10</div><div class="sm">jobs run late</div></div>
+<div class="v" style="left:56px;color:#1E7A35">Sounds great</div><div class="v" style="left:396px;color:#D70015">Sounds bad</div></div>
+<div class="cap">Same facts. Different decisions.</div>
+<script>
+var a=document.getElementById('a'),b=document.getElementById('b'),on=false;
+setInterval(function(){on=!on;a.className=on?'d off':'d';b.className=on?'d':'d off'},3600);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Cognitive Bias</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Predictable shortcuts in thinking shape how people judge and decide, usually without noticing.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Tversky &amp; Kahneman (1974) showed heuristics like anchoring bias judgment in consistent ways.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/cognitive-bias · Tversky &amp; Kahneman, 1974</p>
+<aside>[~3 min] Cognitive Bias. I want to start by clearing something up. Biases aren’t mistakes made by careless people. They’re mental shortcuts that all of us use, all the time. And the important part is they work in predictable directions. That’s what Tversky and Kahneman showed back in 1974 with heuristics like anchoring. [Point to the animation] The animation shows two of the best-known ones. First, anchoring. The same eighty-dollar price feels like a bargain when it sits next to a crossed-out hundred and twenty. Nothing about the eighty changed. Second, framing. “90% on time” and “1 in 10 late” are the exact same fact. But they feel completely different, right? [Pause] These examples are illustrative, by the way. Now, here’s the part I really want you to take away. These biases affect our users, and they affect us. Product teams fall into confirmation bias, sunk-cost thinking, and the false-consensus effect, which is assuming users think like we do. [Ask the room: “Which of those do you think our team falls into most?”] [Let two or three people answer, and keep it light.] Let’s look at two real studies where just the wording changed the decision.</aside>
+</section>

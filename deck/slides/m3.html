@@ -1,0 +1,34 @@
+<section id="m3" data-transition="fade" style="background:linear-gradient(135deg, #156B3C 0%, #0E6E68 55%, #0B5E80 100%);color:#FDFDFE;font-family:'Inter', Arial, sans-serif">
+<x-embed style="position:absolute;left:1060px;top:180px;width:720px;height:720px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden}
+.t{position:absolute;border-radius:50%;border:4px solid rgba(255,255,255,.85);transform:translate(-50%,-50%) scale(.4);opacity:0}
+.t.p{animation:ping 1.2s ease-out}
+@keyframes ping{0%{transform:translate(-50%,-50%) scale(.4);opacity:1}100%{transform:translate(-50%,-50%) scale(1.6);opacity:0}}
+.tg{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);border:3px solid rgba(255,255,255,.5);transform:translate(-50%,-50%);transition:background .3s}
+.tg.h{background:rgba(255,214,10,.9);border-color:#FFD60A}
+.c{position:absolute;width:34px;height:34px;border-radius:50%;background:#FDFDFE;box-shadow:0 0 30px rgba(255,255,255,.7);transform:translate(-50%,-50%);transition:left .8s cubic-bezier(.5,0,.2,1),top .8s cubic-bezier(.5,0,.2,1)}
+</style>
+<script>
+var P=[[160,170,90],[540,150,60],[590,470,110],[200,520,70],[370,340,130]],G=[],i;
+P.forEach(function(p){var g=document.createElement('div');g.className='tg';g.style.left=p[0]+'px';g.style.top=p[1]+'px';g.style.width=p[2]+'px';g.style.height=p[2]+'px';document.body.appendChild(g);G.push(g)});
+var r=document.createElement('div');r.className='t';document.body.appendChild(r);
+var c=document.createElement('div');c.className='c';c.style.left='360px';c.style.top='640px';document.body.appendChild(c);
+var k=0;
+function go(){var p=P[k];G.forEach(function(g){g.className='tg'});c.style.left=p[0]+'px';c.style.top=p[1]+'px';
+setTimeout(function(){G[k].className='tg h';r.style.left=p[0]+'px';r.style.top=p[1]+'px';r.style.width=p[2]+'px';r.style.height=p[2]+'px';r.className='t';void r.offsetWidth;r.className='t p'},850);
+setTimeout(function(){k=(k+1)%P.length;go()},1700)}
+setTimeout(go,300);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:200px;width:880px;font-size:32px;font-weight:600;color:#FDFDFE">Module 3 of 5</p>
+<h1 data-build-in="rise 2" style="position:absolute;left:128px;top:256px;width:900px;font-size:140px;font-weight:800;line-height:1.02;letter-spacing:-5px;color:#FDFDFE">How people act</h1>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:590px;width:840px;font-size:44px;font-weight:500;line-height:1.3;letter-spacing:-0.5px;color:#FDFDFE">Five laws about the moment of action: reaching, waiting, typing, focusing and learning.</p>
+<div data-build-in="rise 4" style="position:absolute;left:128px;top:800px;width:900px;display:flex;flex-direction:row;flex-wrap:wrap;gap:14px">
+<p style="font-size:24px;font-weight:700;background:#1D1D1F;color:#FDFDFE;padding:12px 24px;border-radius:999px">Fitts’s Law</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Doherty Threshold</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Postel’s Law</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Flow</p>
+<p style="font-size:24px;font-weight:500;background:#FDFDFE;color:#1D1D1F;padding:12px 24px;border-radius:999px">Paradox of the Active User</p>
+</div>
+<aside>[~1 min] Welcome back. Last time we talked about how people see: grouping, contrast and why pretty things get forgiven. Today is Module 3, how people act. These five laws are about the moment someone actually does something: reaching for a button, waiting for a response, typing into a field, staying focused and figuring out a feature without reading the instructions. [Pause] Engineers, heads up: this is the most engineering-heavy module in the whole training. Almost every one of these laws gets decided as much in code as in design. Tap target sizes, latency, input parsing, notification logic, in-context help. That’s you. [Point to the animation] The animation on the right is a pointer moving between targets of different sizes and distances. That’s our first law. Let’s start with Fitts’s Law.</aside>
+</section>

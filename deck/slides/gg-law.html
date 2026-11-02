@@ -1,0 +1,40 @@
+<section id="gg-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.cd{position:absolute;left:56px;width:640px;border-radius:30px;background:#F5F5F7;padding:24px 28px;display:flex;flex-direction:column;gap:16px;transition:box-shadow .4s,background .4s}
+.cd.dn{background:#FFF4E0;box-shadow:0 0 0 4px #FF9F0A}
+.hd{display:flex;justify-content:space-between;align-items:center}
+.lb{font-size:24px;font-weight:700}
+.fr{font-size:24px;font-weight:800;color:#FDFDFE;background:linear-gradient(135deg,#FF9F0A,#FF375F);padding:6px 16px;border-radius:999px;transform:scale(0);transition:transform .35s cubic-bezier(.3,.9,.3,1.6)}
+.fr.on{transform:scale(1)}
+.gr{display:grid;gap:12px}
+.s{width:64px;height:64px;border-radius:50%;border:3px dashed #C7C7CC;transition:all .3s cubic-bezier(.3,.9,.3,1.5)}
+.s.f{border:3px solid transparent;background:linear-gradient(135deg,#FF9F0A,#FF375F);transform:scale(1.06)}
+.s.pre{border:3px solid transparent;background:#FFB38A}
+.cap{position:absolute;left:48px;right:48px;top:630px;font-size:28px;font-weight:700;text-align:center;line-height:1.35}
+.nt{position:absolute;left:48px;right:48px;top:730px;font-size:24px;color:#6E6E73;text-align:center}
+</style>
+<div class="cd" id="A" style="top:70px"><div class="hd"><span class="lb">10 stamps, none filled</span><span class="fr" id="fa">Free coffee!</span></div><div class="gr" id="ga" style="grid-template-columns:repeat(5,64px)"></div></div>
+<div class="cd" id="B" style="top:340px"><div class="hd"><span class="lb">12 stamps, 2 already filled</span><span class="fr" id="fb">Free coffee!</span></div><div class="gr" id="gb" style="grid-template-columns:repeat(6,64px)"></div></div>
+<div class="cap">Same 10 purchases to go.<br>The head start finishes first.</div>
+<div class="nt">Illustrative timing, after Kivetz et al., 2006</div>
+<script>
+function $(i){return document.getElementById(i)}
+function mk(g,n){var a=[];for(var i=0;n>i;i++){var s=document.createElement('div');s.className='s';$(g).appendChild(s);a.push(s)}return a}
+var C=[{el:'A',fr:'fa',s:mk('ga',10),pre:0,iv:700},{el:'B',fr:'fb',s:mk('gb',12),pre:2,iv:560}];
+function go(c){var k=c.pre,iv=c.iv;$(c.el).className='cd';$(c.fr).className='fr';c.s.forEach(function(s,i){s.className=c.pre>i?'s pre':'s'});
+function step(){if(k>=c.s.length){$(c.el).className='cd dn';$(c.fr).className='fr on';return}c.s[k].className='s f';k++;iv=iv*0.86;setTimeout(step,iv)}
+setTimeout(step,iv)}
+function run(){C.forEach(go);setTimeout(run,7000)}
+run();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Goal-Gradient Effect</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">The closer people get to a goal, the faster they work to reach it.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Kivetz, Urminsky &amp; Zheng (2006): coffee-card customers bought more often as they neared a free coffee.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/goal-gradient-effect · Kivetz et al., 2006</p>
+<aside>[~3 min] The Goal-Gradient Effect: the closer people get to a goal, the faster they work to reach it. [Point to the animation] Watch the stamps on the right. See how they speed up as each card gets close to full? That acceleration is the whole idea. It was first described in animal behavior studies back in the 1930s, and then confirmed with people by Ran Kivetz and colleagues in 2006, using coffee loyalty cards. And their best-known finding is great. One group got a 10-stamp card, blank. Another group got a 12-stamp card with 2 stamps already filled in. [Pause] Both groups needed exactly ten purchases to get a free coffee. Same effort. But the people with the pre-stamped card finished faster. Just feeling partway there was motivating. [Ask the room: “Who here has a punch card or rewards app where you’ve bought something just because you were close?”] [Let a couple of people answer.] So for us, two takeaways. Show progress. And give people credit for steps they’ve already taken. Quick note, the timing in this animation is illustrative, it’s not from the study. Let’s see where this shows up in apps you use every day.</aside>
+</section>

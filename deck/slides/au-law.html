@@ -1,0 +1,56 @@
+<section id="au-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.w{position:absolute;left:48px;right:48px;top:48px;bottom:48px;display:flex;flex-direction:column;align-items:center}
+.lab{font-size:24px;color:#6E6E73;font-weight:500}
+.card{margin-top:30px;width:500px;display:flex;flex-direction:column;gap:20px;transition:all .7s}
+.card.u{font-family:"Times New Roman",Times,serif;background:#FFFFFF;border:1px solid #888888;border-radius:0;box-shadow:none;padding:14px 34px 40px 8px}
+.card.n{background:#FDFDFE;border:1px solid #E8E8ED;border-radius:32px;box-shadow:0 20px 50px rgba(0,0,0,.12);padding:32px}
+.h{font-size:32px;font-weight:700;transition:all .7s}
+.u .h{color:#0000AA;font-weight:400;text-decoration:underline}
+.row{display:flex;justify-content:space-between;font-size:24px}
+.u .row{color:#333333}
+.n .row span:last-child{font-weight:600}
+.chips{display:flex;gap:12px}
+.chip{font-size:24px;padding:10px 18px;transition:all .7s}
+.u .chip{border:1px solid #000000;background:#EEEEEE;border-radius:0}
+.u .chip:nth-child(2){transform:translateY(7px)}
+.u .chip.s{background:#FFFF00}
+.n .chip{border:2px solid #E8E8ED;border-radius:999px;background:#F5F5F7}
+.n .chip.s{background:#0071E3;color:#FFFFFF;border-color:#0071E3}
+.btn{font-size:24px;text-align:center;padding:16px;transition:all .7s}
+.u .btn{background:#C0C0C0;border:2px outset #999999;border-radius:0;color:#000000;width:60%}
+.n .btn{background:linear-gradient(135deg,#2997FF,#5E5CE6);color:#FFFFFF;border-radius:18px;font-weight:700;width:100%}
+.stars{margin-top:48px;display:flex;gap:12px}
+.stars polygon{transition:fill .5s}
+.big{margin-top:18px;font-size:44px;font-weight:800;letter-spacing:-1px;transition:opacity .3s}
+</style>
+<div class="w">
+<div class="lab">Same features. Same steps.</div>
+<div class="card u" id="c">
+<div class="h">Book a visit</div>
+<div class="row"><span>Date</span><span>Tue, Nov 4</span></div>
+<div class="chips"><div class="chip">9:00</div><div class="chip s">11:30</div><div class="chip">2:00</div></div>
+<div class="btn">Confirm</div>
+</div>
+<div class="stars" id="st"></div>
+<div class="big" id="t">Rated harder to use</div>
+</div>
+<script>
+var NS='http://www.w3.org/2000/svg',st=document.getElementById('st'),S=[],i;
+for(i=0;5>i;i++){var s=document.createElementNS(NS,'svg');s.setAttribute('width','52');s.setAttribute('height','52');s.setAttribute('viewBox','0 0 40 40');var p=document.createElementNS(NS,'polygon');p.setAttribute('points','20,2 25,15 39,15 28,24 32,38 20,30 8,38 12,24 1,15 15,15');p.setAttribute('fill','#E8E8ED');s.appendChild(p);st.appendChild(s);S.push(p)}
+var c=document.getElementById('c'),t=document.getElementById('t'),n=false;
+function set(){c.className=n?'card n':'card u';S.forEach(function(p,k){p.setAttribute('fill',(n?5:2)>k?'#FF9F0A':'#E8E8ED')});t.style.opacity=0;setTimeout(function(){t.textContent=n?'Rated easier to use':'Rated harder to use';t.style.opacity=1},300)}
+function go(){n=!n;set();setTimeout(go,3400)}
+set();setTimeout(go,3000);
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Aesthetic-<br>Usability Effect</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:530px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">People see attractive designs as easier to use, and forgive their small flaws.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:760px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Kurosu &amp; Kashimura (1995): ATM layouts rated more beautiful were also rated easier to use.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/aesthetic-usability-effect · Kurosu &amp; Kashimura, 1995</p>
+<aside>[~3 min] Last law of the module, and it’s a fun one: the Aesthetic-Usability Effect. People believe good-looking designs are easier to use, and they forgive small flaws in them. [Point to the booking card] Watch the card on the right. Same features, same steps, nothing added or removed. All that changes is the craft: alignment, spacing, type, color. And notice how the star rating moves with it. Those stars are illustrative, by the way, not data. Where does this come from? In 1995, two researchers at Hitachi, Kurosu &amp; Kashimura, had people rate ATM screen layouts. The layouts people found more beautiful were also rated easier to use. [Pause] So two takeaways. One: polish isn’t decoration. It literally changes how forgiving people are when something goes wrong. Two, and QA, I want you to hear this one: a beautiful design can make someone tell you it’s easy while they’re struggling. [Ask the room: “Has anyone ever shipped something pretty that tested great and then flopped?”] [Let two or three people answer.] Keep that story in mind. Let’s look at both sides of this out in the wild.</aside>
+</section>

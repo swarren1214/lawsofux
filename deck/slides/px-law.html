@@ -1,0 +1,27 @@
+<section id="px-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.d{position:absolute;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#BF5AF2,#5E5CE6);transition:left 1s cubic-bezier(.5,0,.2,1),top 1s cubic-bezier(.5,0,.2,1)}
+.lab{position:absolute;left:48px;right:48px;top:48px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+.big{position:absolute;left:48px;right:48px;top:700px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .3s}
+</style>
+<div class="lab">Same 36 dots. Only the spacing changes.</div><div class="big" id="b"></div>
+<script>
+var E=[0,104,208,312,416,520],G=[0,56,176,232,352,408],D=[],m=0,b=document.getElementById('b'),i;
+for(i=0;36>i;i++){var d=document.createElement('div');d.className='d';document.body.appendChild(d);D.push(d)}
+var M=[[E,E,'No groups'],[G,E,'Three columns'],[E,G,'Three rows']];
+function go(){var x=M[m][0],y=M[m][1],ox=(752-(x[5]+40))/2,oy=110+(560-(y[5]+40))/2,k=m;
+D.forEach(function(d,i){d.style.left=(ox+x[i%6])+'px';d.style.top=(oy+y[Math.floor(i/6)])+'px'});
+b.style.opacity=0;setTimeout(function(){b.textContent=M[k][2];b.style.opacity=1},350);
+m=(m+1)%3;setTimeout(go,3000)}
+go();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Law of Proximity</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Things that sit close together look like they belong together.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Wertheimer (1923), a founder of Gestalt psychology: the brain groups by spacing before it reads a single label.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/law-of-proximity · Wertheimer, 1923</p>
+<aside>[~3 min] The Law of Proximity: things that sit close together look like they belong together. That’s it. [Point to the animation] Now watch closely, because nothing here changes except spacing. Same 36 dots. No colors, no borders, no labels. And yet the grid reads as no groups, then three columns, then three rows. [Wait for the loop to restart] That’s how strong proximity is. It’s usually the first grouping signal the brain uses. Wertheimer, one of the founders of Gestalt psychology, wrote about this back in 1923. The brain groups by spacing before it reads a single label. So what does that mean for us? It means the gaps between things are as much a design decision as the things themselves. If a label sits halfway between two fields, it’s genuinely ambiguous, no matter what the label says. Your brain can’t tell which field it belongs to, and neither can our users. [Ask the room: “Have you ever filled in the wrong field on a form because of where the label was?”] [Let a few people share.] Let’s look at a couple of places that get this really right.</aside>
+</section>

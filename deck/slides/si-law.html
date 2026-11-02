@@ -1,0 +1,25 @@
+<section id="si-law" data-transition="push" style="background:#F5F5F7;color:#1D1D1F;font-family:'Inter', Arial, sans-serif">
+<div style="position:absolute;left:1040px;top:128px;width:752px;height:824px;background:#FDFDFE;border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.04)"></div>
+<x-embed style="position:absolute;left:1040px;top:128px;width:752px;height:824px"><style>
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1D1D1F}
+.d{position:absolute;width:56px;height:56px;border-radius:28px;background:#D2D2D7;transition:all .55s cubic-bezier(.3,.9,.3,1.2)}
+.d.on{background:linear-gradient(135deg,#BF5AF2,#5E5CE6);border-radius:16px;transform:scale(1.06);box-shadow:0 8px 18px rgba(94,92,230,.3)}
+.lab{position:absolute;left:48px;right:48px;top:48px;font-size:24px;color:#6E6E73;font-weight:500;text-align:center}
+.big{position:absolute;left:48px;right:48px;top:690px;font-size:44px;font-weight:800;text-align:center;letter-spacing:-1px;transition:opacity .3s}
+</style>
+<div class="lab">Nothing moves. Only color and shape change.</div><div class="big" id="t"></div>
+<script>
+var D=[],ox=126,oy=136,r,c,t=document.getElementById('t');
+for(r=0;7>r;r++){for(c=0;7>c;c++){var d=document.createElement('div');d.className='d';d.style.left=(ox+c*74)+'px';d.style.top=(oy+r*74)+'px';d.r=r;d.c=c;document.body.appendChild(d);D.push(d)}}
+var P=[[function(r,c){return false},'No groups'],[function(r,c){return r==c||r+c==6},'A diagonal cross'],[function(r,c){return c==1||c==5},'Two columns'],[function(r,c){return r==0||r==6||c==0||c==6},'A frame']],p=0;
+function go(){var f=P[p][0],k=p;D.forEach(function(d){d.className=f(d.r,d.c)?'d on':'d'});t.style.opacity=0;setTimeout(function(){t.textContent=P[k][1];t.style.opacity=1},300);p=(p+1)%P.length;setTimeout(go,2800)}
+go();
+</script>
+</x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:860px;font-size:32px;font-weight:600;color:#0066CC">Beat 1 · The law</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:184px;width:880px;font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-3px;color:#1D1D1F">Law of Similarity</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:480px;width:840px;font-size:44px;font-weight:600;line-height:1.3;letter-spacing:-0.5px;color:#1D1D1F">Things that look alike are seen as related, even when they’re scattered across the screen.</p>
+<p data-build-in="rise 4" style="position:absolute;left:128px;top:740px;width:820px;font-size:32px;line-height:1.4;color:#6E6E73">Wertheimer (1923): shared color, shape or size can link items regardless of where they sit.</p>
+<p data-build-in="fade 5" style="position:absolute;left:128px;bottom:64px;width:860px;font-size:24px;color:#6E6E73">Source: lawsofux.com/law-of-similarity · Wertheimer, 1923</p>
+<aside>[~3 min] The Law of Similarity. Things that look alike get seen as related, even when they’re scattered all over the screen. [Point to the animation] Here’s the fun part: nothing in this grid moves. Only the color and shape of some dots change. And yet you see a cross, then two columns, then a frame. That’s purely because those dots look alike. This goes back to Max Wertheimer in 1923: shared color, shape or size can link items no matter where they sit. [Pause] In an interface, similarity is a promise. If two things look the same, people assume they behave the same. So every button style, every link color, every icon treatment is quietly teaching your users a rule. And it cuts both ways. If two things look alike but do different things, you’ve broken the promise. If two things do the same job but look different, you’ve made people learn the same thing twice. [Ask the room: “Can anyone think of a button in our product that looks like another one but does something completely different?”] [Let two or three people answer.] Let’s see how the world’s biggest conventions use this.</aside>
+</section>
